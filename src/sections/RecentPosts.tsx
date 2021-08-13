@@ -4,7 +4,7 @@ import PostCard from '~/components/PostCard';
 
 export default function RecentPosts(): ReactElement {
   return (
-    <section>
+    <section id='recent-posts'>
       <Container heading='Recent Posts' size='small' className='my-12'>
         <div className='flex flex-row space-x-3'>
           <PostCard

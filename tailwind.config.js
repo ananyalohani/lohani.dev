@@ -18,6 +18,7 @@ module.exports = {
       colors: {
         sky: colors.sky,
         gray: colors.blueGray,
+        teal: colors.teal,
       },
     },
     fontFamily: {

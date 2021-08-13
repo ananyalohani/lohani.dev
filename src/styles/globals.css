@@ -4,7 +4,7 @@
   @apply box-border p-0 m-0;
 }
 
-a {
+a:not(.btn-link) {
   @apply no-underline transition-all ease-in-out text-sky-500 hover:border-b border-sky-600 hover:text-sky-600;
 }
 
@@ -24,4 +24,20 @@ h6 {
 header h1,
 header h2 {
   @apply font-semibold;
+}
+
+p {
+  @apply text-gray-900;
+}
+
+#polywork #color {
+  @apply hidden;
+}
+
+#polywork:hover #color {
+  @apply block;
+}
+
+#polywork:hover #plain {
+  @apply hidden;
 }

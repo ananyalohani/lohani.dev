@@ -7,7 +7,7 @@ interface Props {
 
 export default function PostCard({ heading, blurb }: Props) {
   return (
-    <div className='max-w-xs p-4 transition-all border-2 border-gray-200 rounded-md cursor-pointer bg-gray-50 group hover:bg-sky-100 hover:border-sky-200'>
+    <div className='max-w-xs p-4 transition-all border-2 border-gray-300 rounded-md cursor-pointer bg-gray-50 group hover:bg-sky-100 hover:border-sky-200'>
       <h3 className='text-lg transition-all group-hover:text-sky-400'>
         {heading}
       </h3>
