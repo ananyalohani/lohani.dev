@@ -5,9 +5,23 @@
 }
 
 a {
-  @apply no-underline;
+  @apply no-underline transition-all ease-in-out text-sky-500 hover:border-b border-sky-600 hover:text-sky-600;
 }
 
 body {
   @apply bg-white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold text-gray-700 font-display;
+}
+
+header h1,
+header h2 {
+  @apply font-semibold;
 }

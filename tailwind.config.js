@@ -4,8 +4,8 @@ module.exports = {
   mode: 'jit',
   purge: [
     './src/pages/**/*.{js,ts,jsx,tsx}',
-    './src/lib/components/**/*.{js,ts,jsx,tsx}',
-    './src/lib/styles/**.css',
+    './src/components/**/*.{js,ts,jsx,tsx}',
+    './src/sections/**/*.{js,ts,jsx,tsx}',
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
@@ -16,14 +16,14 @@ module.exports = {
         120: '34rem',
       },
       colors: {
-        sky: colors.lightBlue,
+        sky: colors.sky,
         gray: colors.blueGray,
       },
     },
     fontFamily: {
-      sans: ['Clear Sans', 'Source Sans Pro', 'ui-sans-serif', 'system-ui'],
-      body: ['Clear Sans', 'Source Sans Pro', 'ui-sans-serif', 'system-ui'],
-      display: ['Clear Sans', 'Source Sans Pro', 'ui-sans-serif', 'system-ui'],
+      sans: ['Clear Sans', 'ui-sans-serif', 'system-ui'],
+      body: ['Clear Sans', 'ui-sans-serif', 'system-ui'],
+      display: ['Source Sans Pro', 'ui-sans-serif', 'system-ui'],
     },
   },
   variants: {
