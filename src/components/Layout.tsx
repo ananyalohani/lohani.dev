@@ -4,7 +4,7 @@ import Footer from '~/components/Footer';
 
 interface Props {
   className?: String;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export default function Layout({ children, className }: Props): ReactElement {

@@ -10,6 +10,7 @@ a:not(.btn-link) {
 
 body {
   @apply bg-white;
+  scroll-behavior: smooth;
 }
 
 h1,

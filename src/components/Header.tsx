@@ -1,20 +1,33 @@
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React, { ReactElement } from 'react';
+import tw from 'twin.macro';
 import Container from '~/components/Container';
+import navigation from '~/lib/navigation';
 
-interface Props {
-  active?: 'about' | 'work' | 'projects' | 'blog';
-}
+export default function Header(): ReactElement {
+  const router = useRouter();
 
-export default function Header({ active }: Props): ReactElement {
   return (
     <header className='sticky top-0 z-10 border-b bg-sky-200 bg-opacity-70 backdrop-filter backdrop-blur-lg border-sky-300'>
       <Container className='flex flex-row items-center justify-between py-5'>
-        <h1 className='text-3xl'>Ananya Lohani</h1>
-        <div className='flex flex-row space-x-3 text-lg font-semibold '>
-          <p className='text-gray-700'>About</p>
-          <p className='text-gray-700'>Work</p>
-          <p className='text-gray-700'>Projects</p>
-          <p className='text-gray-700'>Blog</p>
+        <h1 className='text-3xl'>
+          <Link href='/'>
+            <a className='btn-link'>Ananya Lohani</a>
+          </Link>
+        </h1>
+        <div className='flex flex-row space-x-3 text-lg font-medium '>
+          {navigation.map((nav, key) => (
+            <h2
+              className='text-gray-700'
+              css={[router.asPath === nav.path && tw`font-bold`]}
+              key={key}
+            >
+              <Link href={nav.path}>
+                <a className='btn-link'>{nav.title}</a>
+              </Link>
+            </h2>
+          ))}
         </div>
       </Container>
     </header>

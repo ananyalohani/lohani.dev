@@ -15,7 +15,7 @@ export default function Contact(): ReactElement {
           <br />
           <p>You can also connect with me on the following platforms:</p>
           <div className='flex flex-wrap mt-3'>
-            {socials.map((social) => (
+            {socials.map((social, key) => (
               <Button
                 text={social.text}
                 className='mt-3 mr-6'
@@ -23,6 +23,7 @@ export default function Contact(): ReactElement {
                 color={social.color}
                 link={social.link}
                 id={social.text === 'Polywork' ? 'polywork' : ''}
+                key={key}
               />
             ))}
           </div>
