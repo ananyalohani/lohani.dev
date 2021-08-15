@@ -9,9 +9,9 @@ interface Props {
 
 export default function Layout({ children, className }: Props): ReactElement {
   return (
-    <div className='flex flex-col w-full'>
+    <div className='flex flex-col w-full min-h-screen'>
       <Header />
-      <main>{children}</main>
+      <main className='flex-1'>{children}</main>
       <Footer />
     </div>
   );
