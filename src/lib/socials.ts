@@ -34,7 +34,7 @@ const socials: Social[] = [
     color: 'indigo',
     icon: Polywork,
     text: 'Polywork',
-    link: 'mailto:ananya@lohani.dev',
+    link: 'https://www.polywork.com/ananyalohani',
   },
   {
     color: 'dark-blue',
@@ -46,13 +46,13 @@ const socials: Social[] = [
     color: 'blue',
     icon: FaBehance,
     text: 'Behance',
-    link: '',
+    link: 'https://www.behance.net/ananyalohani',
   },
   {
     color: 'sky',
     icon: FaTelegramPlane,
     text: 'Telegram',
-    link: '',
+    link: 'https://t.me/ananyalohani',
   },
   {
     color: 'teal',
