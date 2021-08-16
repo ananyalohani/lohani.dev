@@ -26,8 +26,12 @@ export default function BlogPost({ code, frontmatter }: any): ReactElement {
 
   return (
     <Layout>
-      <Container heading={frontmatter.title} size='small'>
-        <Component />
+      <Container size='small'>
+        {/* <img src={frontmatter.image} /> */}
+        <article className='mx-auto prose max-w-none'>
+          <h1>{frontmatter.title}</h1>
+          <Component />
+        </article>
       </Container>
     </Layout>
   );
