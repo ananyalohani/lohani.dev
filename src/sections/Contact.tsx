@@ -1,12 +1,12 @@
 import React, { ReactElement } from 'react';
 import Container from '~/components/Container';
 import Button from '~/components/Button';
-import socials from '~/lib/socials';
+import socials from '~/lib/data/socials';
 
 export default function Contact(): ReactElement {
   return (
     <section id='contact'>
-      <Container heading='Contact' size='small' className='my-12'>
+      <Container heading='Contact' headingSize='small' className='my-12'>
         <div>
           <p>
             If you like my work and are interested in working with me, you can

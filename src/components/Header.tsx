@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import React, { ReactElement } from 'react';
 import tw from 'twin.macro';
 import Container from '~/components/Container';
-import navigation from '~/lib/navigation';
+import navigation from '~/lib/data/navigation';
 
 export default function Header(): ReactElement {
   const router = useRouter();

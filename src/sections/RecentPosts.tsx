@@ -2,23 +2,19 @@ import React, { ReactElement } from 'react';
 import Container from '~/components/Container';
 import PostCard from '~/components/PostCard';
 
-export default function RecentPosts(): ReactElement {
+export default function RecentPosts({ posts }: any): ReactElement {
   return (
     <section id='recent-posts'>
-      <Container heading='Recent Posts' size='small' className='my-12'>
+      <Container heading='Recent Posts' headingSize='small' className='my-12'>
         <div className='flex flex-row space-x-3'>
-          <PostCard
-            heading='How I built my site with Next.js'
-            blurb='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempus magna sed ex mattis elementum. Interdum et malesuada fames ac ante ipsum primis in faucibus...'
-          />
-          <PostCard
-            heading='How I built my site with Next.js'
-            blurb='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempus magna sed ex mattis elementum. Interdum et malesuada fames ac ante ipsum primis in faucibus...'
-          />
-          <PostCard
-            heading='How I built my site with Next.js'
-            blurb='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempus magna sed ex mattis elementum. Interdum et malesuada fames ac ante ipsum primis in faucibus...'
-          />
+          {posts.map((post: any, key: any) => (
+            <PostCard
+              heading={post.frontmatter.title}
+              blurb={post.frontmatter.description}
+              key={key}
+              link={`/blog/${post.slug}`}
+            />
+          ))}
         </div>
       </Container>
     </section>
