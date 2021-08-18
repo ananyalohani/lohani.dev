@@ -1,0 +1,149 @@
+---
+  title: "How I Built a Fully-Featured Video Calling Platform in a Month"
+  description: "Recently, I completed my Engage mentorship with Microsoft. As part of the program, I built Teams, a fully-featured video calling platform from scratch! In this blog post, I will be sharing what I learnt while working on this project."
+  publishedAt: "2021-08-14"
+  category: "post"
+  image: "/images/blog/msft-teams-homepage.png"
+---
+
+Recently, I completed my [Engage mentorship](https://microsoft.acehacker.com/engage2021/) with **[Microsoft](https://microsoft.com/)**. We were given access to exclusive AMA sessions, talks and 1:1 sessions with experienced Microsoft employees. For me, the most valuable experience to come out of this mentorship was the project I built.
+
+As part of the program, I built **[Teams](https://msft.lohani.dev/)**, a fully-featured video calling platform from scratch! Before this project, I had little to no experience with backend development, so building this project from start to finish in under a month was a big deal for me. In this blog post, I will be sharing what I learnt while working on this project.
+
+Psst! If you're a beginner in web development, this can be an impressive project to put on your portfolio, so keep reading!
+
+## The Prompt
+
+Our task was to build an application within 4 weeks with the following _mandatory feature_:
+
+> A minimum of two participants should be able to connect with each other using your product to have a video conversation.
+
+We were free to use any technologies we liked. We received points for every functional feature we built. At the beginning of the 4th week, we were given a _surprise feature_ that we could choose to implement:
+
+> Include a chat feature in your application where meeting participants can share info without disrupting the flow of the meeting. Through this chat feature, your participants should be able to:
+>
+> - View & Send messages.
+> - Continue the conversation after the meeting.
+> - Start the conversation before the meeting.
+
+The focus of the mentorship was for us to learn about **Agile** development techniques and use them throughout the project's development. I used the **Kanban Board** technique and documented my progress in [a GitHub Project](https://github.com/users/ananyalohani/projects/2).
+
+## Tech Stack
+
+While choosing the technologies, I made decisions based on three things:
+
+- **Speed:** I had to get my project up and running in a month while implementing as many features as possible. So I picked technologies I was already reasonably familiar with.
+- **Scalability**: I had to ensure that my project could handle multiple users simultaneously, both in terms of participants in a video call and the number of concurrent users. Thus, picking something that would be easily scalable out of the box was essential.
+- **Developer Experience:** I wanted to pick technologies that were easy to learn and fun to work with — well-written documentation and a large community were important for this.
+
+Finally, I decided to go with the following tech stack:
+
+- [Next.js](https://nextjs.org)
+
+  I was already quite familiar with React and had heard that Next.js was a production-ready scalable framework with great developer experience.
+
+- [Tailwind CSS](https://tailwindcss.com)
+
+  I had worked with Tailwind CSS before and really enjoyed it. Plus, it has GREAT documentation, like I actually read Tailwind docs for fun :P.
+
+- [Twilio Programmable Video](https://www.twilio.com/video)
+
+  I have elaborated on why I chose this below.
+
+- [Socket.IO](https://socket.io)
+
+  It's the most widely-used WebSocket wrapper for JavaScript. Socket.IO simplifies the WebSocket API and provides convenient methods of creating rooms and broadcasting events. It was easy to find multiple tutorials online that used Socket.IO for building chat applications.
+
+- [MongoDB](https://www.mongodb.com/) + [Mongoose](https://mongoosejs.com/)
+
+  I wanted to try out a NoSQL database. Also, it was really simple to set up authentication with [NextAuth.js](https://next-auth.js.org/) using this combination of technologies.
+
+- [NodeJS](https://nodejs.org/) + [Express](https://expressjs.com/)
+
+  For setting up the socket server and Twilio API on the backend.
+
+- [DigitalOcean](https://www.digitalocean.com/) + [Nginx](https://www.nginx.com/)
+
+  I deployed my application on a DigitalOcean droplet and used Nginx for reverse-proxying HTTP requests.
+
+I was able to build a really robust application using this tech stack. I had full control over how everything looked and worked.
+
+## Video Calling
+
+Naturally, my top priority was to get a simple 2-person video call working. I looked up tutorials online, and I found several videos and blog posts, most of them using wrappers of WebSockets and WebRTC.
+
+### Socket.IO and Simple Peer
+
+WebSockets enable direct communication between a web server and a web browser (the client) to facilitate real-time communication between the two. It followed the event-emitter-listener pattern, which made it super easy to send and receive data between the client and server.
+
+WebRTC enables establishing 1:1 connections between peers to send and receive video, voice, and generic data between them.
+
+To understand how the two worked together, I found these two videos really helpful:
+
+- [How To Create A Video Chat App With WebRTC](https://www.youtube.com/watch?v=DvlyzDZDEq4&ab_channel=WebDevSimplified)
+
+  This really helped me build a solid foundation on the workings of Socket.IO and PeerJS, which is a wrapper around WebRTC.
+
+- [React Group Video Chat | simple-peer webRTC](https://www.youtube.com/watch?v=R1sfHPwEH7A&t=2s&ab_channel=CodingWithChaim)
+
+  This video introduced the concept of a **mesh network** of peers. Each peer is connected to every other peer in the call, and they send their audio and video streams to each other through the [simple-peer](https://www.npmjs.com/package/simple-peer) library (another WebRTC wrapper).
+
+Using what I learned from these videos, I built a group video chat with my own **mesh network** architecture, which could handle 3 participants at a time.
+
+### Twilio Programmable Video
+
+As I built more features, I realised that I wanted my video calls to be scalable. So I did some research on how scalable this mesh network really was. Turns out it's pretty bad. It can't handle a load of more than 3-4 participants at a time.
+
+There were two scalable alternatives: **Selective Forwarding Unit** (SFU) and **Multipoint Conferencing Unit** (MCU). [This blog post](https://www.callstats.io/blog/webrtc-architectures-explained-in-5-minutes-or-less) explains the tradeoffs between them very well.
+
+> Without the issue of legacy endpoints, the SFU architecture provides better scaling properties. It requires far less computing power on the server, since the computing requirements are delegated to the endpoints, which may be quite heavy for some mobile clients. It is also closer to the end-to-end principle, upon which the Internet is built.
+
+So, I decided to use the SFU architecture for my application. I looked up libraries that implemented SFU and found that [Mediasoup](https://mediasoup.org/), [Jitsi](https://jitsi.github.io/handbook/docs/intro) and Twilio Programmable Video were among them.
+
+Mediasoup is written entirely in C++, and I found the documentation to be not so beginner-friendly. Jitsi provided iframe APIs, but the video call interface looked too much like Jitsi's interface, so it did not provide flexibility to alter its appearance.
+
+Twilio Programmable Video, fortunately, did not have either of those drawbacks. It's very well-documented and easy to set up. It's also really flexible— it provides the APIs to handle the basic video calling functionality, and it's entirely up to the developer to design the interface. So, I decided to use Twilio for my project. Twilio's Video Group Rooms support up to 50 participants in a single call and up to 2000 concurrent rooms.
+
+## Group Chat
+
+Group chat is probably the second-most common feature on any video-calling platform. At first, I got a simple in-call group chat working that used Socket.IO to exchange messages between participants. Fortunately, Socket.IO and NodeJS are quite scalable, so using them for this project wouldn't be an issue. However, the messages weren't getting stored anywhere, so the chat history was lost when a user left the call.
+
+![Chats in the video room](/images/blog/chats-video-room.png)
+
+_Chats in the video room_
+
+![Chats in the chat room](/images/blog/chats-chat-room.png)
+
+_Chats in the chat room_
+
+I realised I needed to store the messages and chat sessions in a database. I used the combination of MongoDB and Mongoose for this. A unique `id` identifies the chat rooms and video calls. Whenever a user sends a message inside a video room, say, `/room/[id]`, it gets stored in the database entry for that particular `id`. The user can view the chat history and continue the conversation by going to the chat room at `/room/[id]/chat`. Whenever a user enters a video or chat room they have already visited before, the messages for that room are fetched and displayed in the chat window.
+
+## Additional Features
+
+I implemented several additional features in my application. Some of these include:
+
+- **Authentication**
+
+  Users can sign into Teams using Google and GitHub providers. I integrated authentication into my application using NextAuth.js, which is an open-source library built especially for Next.js. The details about the users, sessions and accounts are stored in the MongoDB database.
+
+- **Screen Share**
+
+  Users can share their screens during the video call. When a user clicks on the _Present Screen_ button, the Navigator interface requests the user's screen track through the method `navigator.getDisplayMedia()`. The user's screen track is sent to Twilio's Video Room and, therefore, to all the participants in the room.
+
+- **Background Filters**
+
+  Users can add fun virtual backgrounds and blur backgrounds to their videos. I implemented this using [Twilio's Video Processors API](https://www.twilio.com/docs/video/video-processors), which uses [TensorFlow.js](https://www.tensorflow.org/js) under the hood. This is a quite new feature in Twilio, so the documentation available for this was limited. It took me a while to figure it out on my own. I might write another blog post about how I implemented it in the future :).
+
+- **Monitoring Network Quality**
+
+  Network issues might reduce the usability of video calls, resulting in end-user frustration. To tackle this, I used [Twilio's Network Quality API](https://www.twilio.com/docs/video/using-network-quality-api) to monitor and display participants' network quality in real-time during the video call. The quality scores are displayed during the video call to aid users in diagnosing problems as their network environment changes.
+
+The complete list of features is available in the [documentation of Teams.](https://github.com/ananyalohani/teams#readme)
+
+## Conclusion
+
+This is the biggest project I've built so far. Completing this project made me realise just how far I've come in my development journey. It also made me realise that if someone gave me enough time and resources to build something, I'm confident I would accomplish it. I had a lot of fun learning and coding this application! I hope you enjoyed reading about it too.
+
+Check out the application live at [msft.lohani.dev](https://msft.lohani.dev). If you wish to dive into the code, you can explore [the GitHub repository](https://github.com/ananyalohani/teams). I also uploaded a [YouTube video](https://youtu.be/qoQxXQ06DRE) demonstrating Teams. If you're an open-source contributor, feel free to create an Issue or open a Pull Request on my repository.
+
+If you have any questions regarding Teams, feel free to reach out to me via [email](mailto:ananya@lohani.dev) :).

@@ -3,6 +3,7 @@ import tw from 'twin.macro';
 
 interface Props {
   heading?: String;
+  headingSize?: 'big' | 'small';
   size?: 'big' | 'small';
   className?: String;
   children: React.ReactNode;
@@ -10,14 +11,23 @@ interface Props {
 
 export default function Container({
   heading,
+  headingSize = 'big',
   size = 'big',
   className,
   children,
 }: Props): ReactElement {
   return (
-    <div className={`max-w-4xl mx-auto w-11/12 ${className}`}>
+    <div
+      className={`mx-auto w-11/12 ${className}`}
+      css={[size === 'small' ? tw`max-w-3xl` : tw`max-w-4xl`]}
+    >
       {heading && (
-        <h1 css={[tw`mb-8`, size === 'small' ? tw`text-3xl` : tw`text-4xl`]}>
+        <h1
+          css={[
+            tw`mb-8`,
+            headingSize === 'small' ? tw`text-3xl` : tw`text-4xl`,
+          ]}
+        >
           {heading}
         </h1>
       )}

@@ -20,6 +20,16 @@ module.exports = {
         gray: colors.blueGray,
         teal: colors.teal,
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            margin: '5rem 0',
+            h1: {
+              color: colors.blueGray[800],
+            },
+          },
+        },
+      },
     },
     fontFamily: {
       sans: ['Clear Sans', 'ui-sans-serif', 'system-ui'],
@@ -27,9 +37,5 @@ module.exports = {
       display: ['Source Sans Pro', 'ui-sans-serif', 'system-ui'],
     },
   },
-  variants: {
-    extend: {},
-  },
-
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };

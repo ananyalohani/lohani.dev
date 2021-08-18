@@ -4,7 +4,7 @@ import Container from '~/components/Container';
 export default function About(): ReactElement {
   return (
     <section id='about'>
-      <Container size='big' className='my-16'>
+      <Container headingSize='big' className='my-16'>
         <div className='flex flex-row items-center justify-between'>
           <div className='flex flex-col space-y-4'>
             <h1 className='mb-2 text-4xl'>Hello there, I'm Ananya.</h1>
