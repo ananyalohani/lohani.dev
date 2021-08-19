@@ -6,12 +6,16 @@ import Container from '~/components/Container';
 import { format } from 'date-fns';
 import { FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { BiLink } from 'react-icons/bi';
+import { IoShareSocial } from 'react-icons/io5';
 import { IconType } from 'react-icons/lib';
+import Link from 'next/link';
+import { PostMeta } from '~/types/blog';
+import DecorativeRule from '~/components/DecorativeRule';
 
 export const getStaticProps = async ({ params }: any) => {
   const post = await getSinglePost(params.slug);
   return {
-    props: { ...post },
+    props: { ...post, slug: params.slug },
   };
 };
 
@@ -23,9 +27,11 @@ export const getStaticPaths = async () => {
   };
 };
 
-interface Props {}
-
-export default function BlogPost({ code, frontmatter }: any): ReactElement {
+export default function BlogPost({
+  code,
+  frontmatter,
+  slug,
+}: PostMeta): ReactElement {
   const Component = React.useMemo(() => getMDXComponent(code), [code]);
   const dateArr = frontmatter.publishedAt
     .split('-')
@@ -41,7 +47,7 @@ export default function BlogPost({ code, frontmatter }: any): ReactElement {
 
   return (
     <Layout>
-      <section className='relative -top-56'>
+      <section className='z-10 mt-40 transform translate-z-0'>
         <Container size='big' className='px-20 py-16 bg-white rounded-2xl'>
           <article className='mx-auto my-0 prose max-w-none'>
             <h1 style={{ marginBottom: '0' }}>{frontmatter.title}</h1>
@@ -50,16 +56,19 @@ export default function BlogPost({ code, frontmatter }: any): ReactElement {
                 <img
                   src='/images/ananya.jpg'
                   className='w-8 rounded-full'
-                  style={{ margin: '1.2rem 0' }}
+                  style={{ margin: '1.2rem 0.5rem 1.2rem 0' }}
                 />
                 <p className='text-sm text-gray-600'>Ananya Lohani</p>
                 <p className='text-sm font-bold text-gray-600'>·</p>
                 <p className='text-sm text-gray-600'>{date}</p>
               </div>
               <div className='flex flex-row items-center space-x-3'>
-                <ShareIcon Icon={FaTwitter} />
-                <ShareIcon Icon={FaLinkedin} />
                 <ShareIcon Icon={BiLink} />
+                <Link href={`/blog/${slug}/share`}>
+                  <a className='btn-link'>
+                    <ShareIcon Icon={IoShareSocial} />
+                  </a>
+                </Link>
               </div>
             </div>
             <hr style={{ marginTop: 0 }} />
@@ -68,6 +77,7 @@ export default function BlogPost({ code, frontmatter }: any): ReactElement {
               className='mx-auto shadow-xl rounded-xl'
             />
             <Component />
+            <DecorativeRule />
           </article>
         </Container>
       </section>

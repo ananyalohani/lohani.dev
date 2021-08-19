@@ -1,12 +1,7 @@
 export interface PostMeta {
+  code: string;
   slug: string;
-  frontmatter: FrontMatter;
-}
-
-export interface FrontMatter {
-  title: String;
-  description: String;
-  publishedAt: Date;
-  category: String;
-  image?: string;
+  frontmatter: {
+    [key: string]: any;
+  };
 }
