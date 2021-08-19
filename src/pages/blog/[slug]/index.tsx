@@ -4,7 +4,6 @@ import { getMDXComponent } from 'mdx-bundler/client';
 import { getAllPosts, getSinglePost } from '~/lib/mdx';
 import Container from '~/components/Container';
 import { format } from 'date-fns';
-import { FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { BiLink } from 'react-icons/bi';
 import { IoShareSocial } from 'react-icons/io5';
 import { IconType } from 'react-icons/lib';
@@ -53,11 +52,7 @@ export default function BlogPost({
             <h1 style={{ marginBottom: '0' }}>{frontmatter.title}</h1>
             <div className='flex flex-row justify-between w-full'>
               <div className='flex flex-row items-center space-x-2'>
-                <img
-                  src='/images/ananya.jpg'
-                  className='w-8 rounded-full'
-                  style={{ margin: '1.2rem 0.5rem 1.2rem 0' }}
-                />
+                <img src='/images/ananya.jpg' id='avatar' />
                 <p className='text-sm text-gray-600'>Ananya Lohani</p>
                 <p className='text-sm font-bold text-gray-600'>·</p>
                 <p className='text-sm text-gray-600'>{date}</p>
@@ -72,10 +67,7 @@ export default function BlogPost({
               </div>
             </div>
             <hr style={{ marginTop: 0 }} />
-            <img
-              src={frontmatter.image}
-              className='mx-auto shadow-xl rounded-xl'
-            />
+            <img src={frontmatter.image} id='main-img' />
             <Component />
             <DecorativeRule />
           </article>

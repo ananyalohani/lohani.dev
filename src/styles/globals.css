@@ -42,3 +42,16 @@ p {
 #polywork:hover #plain {
   @apply hidden;
 }
+
+.prose img {
+  @apply rounded-md !important;
+}
+
+.prose #main-img {
+  @apply mx-auto shadow-xl rounded-xl !important;
+}
+
+.prose #avatar {
+  @apply w-8 rounded-full !important;
+  margin: 1.2rem 0.5rem 1.2rem 0;
+}
