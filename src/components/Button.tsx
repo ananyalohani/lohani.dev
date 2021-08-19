@@ -21,7 +21,7 @@ export default function Button({
 }: Props): ReactElement {
   return (
     <button
-      className={`p-2 border-2 border-gray-300 rounded-md cursor-pointer bg-gray-50 text-gray-700 group ${className}`}
+      className={`p-2 transition-all ease-out border-2 border-gray-300 rounded-md cursor-pointer bg-gray-50 text-gray-700 group ${className}`}
       id={id}
       css={[
         color === 'blue'

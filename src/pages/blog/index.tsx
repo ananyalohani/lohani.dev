@@ -19,7 +19,7 @@ export default function Blog({ posts }: any) {
   return (
     <Layout>
       <section>
-        <Container heading='Blog'>
+        <Container heading='Blog' className='my-16'>
           {posts.map((post: any, key: any) => (
             <PostCard
               heading={post.frontmatter.title}
