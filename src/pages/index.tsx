@@ -17,10 +17,20 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 
 export default function Home({ posts }: any) {
   return (
-    <Layout>
-      <About />
-      <RecentPosts posts={posts} />
-      <Contact />
-    </Layout>
+    <>
+      <Head>
+        <title>Ananya Lohani</title>
+        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+        <meta
+          name='description'
+          content='Ananya Lohani is a 3rd year undergrad student majoring in CSE at IIIT Delhi.'
+        />
+      </Head>
+      <Layout>
+        <About />
+        <RecentPosts posts={posts} />
+        <Contact />
+      </Layout>
+    </>
   );
 }
