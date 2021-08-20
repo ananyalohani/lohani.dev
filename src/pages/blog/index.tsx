@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Layout from '~/components/Layout';
+import Layout from '~/layouts/Layout';
 import { getAllPosts } from '~/lib/mdx';
 import Link from 'next/link';
 
