@@ -6,6 +6,7 @@ specifiers:
   '@types/react': ^17.0.9
   '@types/react-icons': ^3.0.0
   '@types/styled-components': ^5.1.12
+  '@types/uuid': ^8.3.1
   autoprefixer: ^10.2.6
   babel-plugin-macros: ^3.1.0
   babel-plugin-styled-components: ^1.13.2
@@ -30,6 +31,7 @@ specifiers:
   tailwindcss: ^2.2.7
   twin.macro: ^2.6.2
   typescript: 4.3.2
+  uuid: ^8.3.2
 
 dependencies:
   '@prisma/client': 2.29.1_prisma@2.29.1
@@ -48,11 +50,13 @@ dependencies:
   react-icons: 4.2.0_react@17.0.2
   react-share: 4.4.0_react@17.0.2
   styled-components: 5.3.0_281a4fa50a045c9112baf635f3bc27a7
+  uuid: 8.3.2
 
 devDependencies:
   '@types/react': 17.0.19
   '@types/react-icons': 3.0.0_react@17.0.2
   '@types/styled-components': 5.1.12
+  '@types/uuid': 8.3.1
   autoprefixer: 10.3.1_postcss@8.3.6
   babel-plugin-macros: 3.1.0
   babel-plugin-styled-components: 1.13.2_styled-components@5.3.0
@@ -515,6 +519,10 @@ packages:
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
     dev: false
+
+  /@types/uuid/8.3.1:
+    resolution: {integrity: sha512-Y2mHTRAbqfFkpjldbkHGY8JIzRN6XqYRliG8/24FcHm2D2PwW24fl5xMRTVGdrb7iMrwCaIEbLWerGIkXuFWVg==}
+    dev: true
 
   /acorn-jsx/5.3.2_acorn@8.4.1:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}

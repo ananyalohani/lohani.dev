@@ -43,6 +43,7 @@ export default function Button({
         href={link}
         target='_blank'
         className='flex flex-row items-center space-x-3 btn-link'
+        rel='noopener noreferrer'
       >
         {/* @ts-ignore */}
         {Icon && <Icon className='w-5 h-5' />}
