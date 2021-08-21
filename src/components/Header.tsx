@@ -40,7 +40,7 @@ export default function Header(): ReactElement {
           {navigation.map((nav, key) => (
             <h2
               className='text-gray-700 transition-all ease-out hover:text-sky-500'
-              css={[router.asPath === nav.path && tw`text-sky-600`]}
+              css={[router.asPath === nav.path && tw`text-sky-700`]}
               key={key}
             >
               <Link href={nav.path}>

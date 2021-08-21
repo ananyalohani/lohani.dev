@@ -60,6 +60,7 @@ export default class MyDocument extends Document {
 
   render() {
     const [csp, nonce] = generateCsp();
+
     return (
       <Html lang='en'>
         <Head nonce={nonce}>
