@@ -20,7 +20,7 @@ export default function Footer(): ReactElement {
 
   return (
     <footer className='border-t bg-sky-200 border-sky-300 bg-opacity-70'>
-      <Container className='flex flex-row items-center justify-between py-5 text-gray-700'>
+      <Container className='flex flex-row items-center justify-between py-5 text-sm text-gray-700 sm:text-base'>
         <div>
           Built with{' '}
           <Link href='https://nextjs.org'>

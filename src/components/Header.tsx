@@ -31,12 +31,12 @@ export default function Header(): ReactElement {
       }}
     >
       <Container className='flex flex-row items-center justify-between py-5'>
-        <h1 className='text-2xl'>
+        <h1 className='text-xl sm:text-2xl'>
           <Link href='/'>
             <a className='btn-link'>Ananya Lohani</a>
           </Link>
         </h1>
-        <div className='flex flex-row space-x-5 text-lg font-normal'>
+        <div className='flex flex-row space-x-3 text-base font-normal sm:text-lg sm:space-x-5'>
           {navigation.map((nav, key) => (
             <h2
               className='text-gray-700 transition-all ease-out hover:text-sky-500'

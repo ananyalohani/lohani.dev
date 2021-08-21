@@ -5,11 +5,6 @@ const navigation = [
     path: '/',
   },
   {
-    name: 'work',
-    title: 'Work',
-    path: '/work',
-  },
-  {
     name: 'projects',
     title: 'Projects',
     path: '/projects',
@@ -18,6 +13,11 @@ const navigation = [
     name: 'blog',
     title: 'Blog',
     path: '/blog',
+  },
+  {
+    name: 'resume',
+    title: 'Resume',
+    path: 'https://ananya.li/resume',
   },
 ];
 

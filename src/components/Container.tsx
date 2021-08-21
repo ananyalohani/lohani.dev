@@ -25,7 +25,9 @@ export default function Container({
         <h1
           css={[
             tw`mb-8`,
-            headingSize === 'small' ? tw`text-3xl` : tw`text-4xl`,
+            headingSize === 'small'
+              ? tw`text-2xl sm:text-3xl`
+              : tw`text-3xl sm:text-4xl`,
           ]}
         >
           {heading}

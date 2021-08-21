@@ -28,7 +28,7 @@ header h2 {
 }
 
 p {
-  @apply text-gray-900;
+  @apply text-sm text-gray-900 sm:text-base;
 }
 
 #polywork #color {

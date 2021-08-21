@@ -14,11 +14,11 @@ export default function Contact(): ReactElement {
           </p>
           <br />
           <p>You can also connect with me on the following platforms:</p>
-          <div className='flex flex-wrap mt-3'>
+          <div className='flex flex-wrap gap-3 mt-3 md:gap-4'>
             {socials.map((social, key) => (
               <Button
                 text={social.text}
-                className='mt-3 mr-6'
+                className=''
                 Icon={social.icon}
                 color={social.color}
                 link={social.link}

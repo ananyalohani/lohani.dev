@@ -5,9 +5,11 @@ export default function About(): ReactElement {
   return (
     <section id='about'>
       <Container headingSize='big' className='my-16'>
-        <div className='flex flex-row items-center justify-between'>
+        <div className='flex flex-col items-center justify-between md:flex-row'>
           <div className='flex flex-col space-y-4'>
-            <h1 className='mb-2 text-4xl'>Hello there, I'm Ananya.</h1>
+            <h1 className='mb-2 text-3xl sm:text-4xl'>
+              Hello there, I'm Ananya.
+            </h1>
             <p>
               I am a 3rd year undergrad student majoring in Computer Science and
               Engineering at{' '}
@@ -30,7 +32,10 @@ export default function About(): ReactElement {
               <a href='https://instagram.com/lohani_art'>my art account</a>.
             </p>
           </div>
-          <img src='/images/ananya.jpg' className='ml-5 rounded-full w-72' />
+          <img
+            src='/images/ananya.jpg'
+            className='self-start w-56 mt-8 ml-5 rounded-full md:w-72 md:mt-0 md:self-auto'
+          />
         </div>
       </Container>
     </section>

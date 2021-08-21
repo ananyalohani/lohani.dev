@@ -46,7 +46,7 @@ export default function Button({
       >
         {/* @ts-ignore */}
         {Icon && <Icon className='w-5 h-5' />}
-        <div className='font-bold'>{text}</div>
+        <div className='text-sm font-bold sm:text-base'>{text}</div>
       </a>
     </button>
   );

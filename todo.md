@@ -1,5 +1,5 @@
-[ ] add SEO to blogs
-[ ] add share links to blog post
+[x] add SEO to blogs
+[x] add share links to blog post
 [ ] make website mobile responsive
 [ ] redesign post cards
 [ ] redesign buttons?
