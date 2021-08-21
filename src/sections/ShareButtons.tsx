@@ -11,7 +11,7 @@ export default function ShareButtons({ url }: Props): ReactElement {
     <div className='flex flex-row justify-around w-full'>
       {share.map((s) => (
         <s.shareComponent url={url}>
-          <SocialIcon Icon={s.icon} className='w-7 h-7' />
+          <SocialIcon Icon={s.icon} className='w-7 h-7' color={s.color} />
         </s.shareComponent>
       ))}
     </div>

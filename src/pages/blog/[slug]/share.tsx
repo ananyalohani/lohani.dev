@@ -1,9 +1,10 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useState } from 'react';
 import PostLayout from '~/layouts/PostLayout';
 import { getAllPosts, getSinglePost } from '~/lib/mdx';
 import { PostMeta } from '~/types/blog';
 import Modal from '~/components/Modal';
 import ShareButtons from '~/sections/ShareButtons';
+import { useRouter } from 'next/router';
 
 export const getStaticProps = async ({ params }: any) => {
   const post = await getSinglePost(params.slug);
@@ -26,6 +27,18 @@ export default function BlogPost({
   slug,
   url,
 }: PostMeta): ReactElement {
+  const router = useRouter();
+  const [open, setOpen] = useState<Boolean>(true);
+
+  const onModalClose = () => {
+    setOpen(false);
+    router.push(`/blog/${slug}`);
+  };
+
+  const onModalOpen = () => {
+    setOpen(true);
+  };
+
   return (
     <>
       <PostLayout
@@ -35,8 +48,15 @@ export default function BlogPost({
         image={frontmatter.image}
         code={code}
         fixed={true}
+        url={url!}
       />
-      <Modal open={true} className='flex flex-col items-center w-2/5 space-y-4'>
+      <Modal
+        open={open}
+        className='flex flex-col items-center w-2/5 space-y-4'
+        setOpen={setOpen}
+        onClose={onModalClose}
+        onOpen={onModalOpen}
+      >
         <h1 className='w-full pb-2 text-3xl text-center border-b border-gray-300'>
           Share this Post!
         </h1>

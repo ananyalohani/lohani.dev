@@ -98,7 +98,7 @@ export const share: Share[] = [
     name: 'Whatsapp',
     icon: FaWhatsapp,
     shareComponent: WhatsappShareButton,
-    color: 'light-green',
+    color: 'green',
   },
   {
     name: 'Telegram',
@@ -116,7 +116,7 @@ export const share: Share[] = [
     name: 'Email',
     icon: FaEnvelope,
     shareComponent: EmailShareButton,
-    color: 'cyan',
+    color: 'teal',
   },
 ];
 

@@ -19,6 +19,8 @@ module.exports = {
         sky: colors.sky,
         gray: colors.blueGray,
         teal: colors.teal,
+        emerald: colors.emerald,
+        green: colors.green,
       },
       typography: {
         DEFAULT: {

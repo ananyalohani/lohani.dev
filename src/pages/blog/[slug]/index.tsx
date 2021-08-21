@@ -3,7 +3,6 @@ import PostLayout from '~/layouts/PostLayout';
 import { getAllPosts, getSinglePost } from '~/lib/mdx';
 import { PostMeta } from '~/types/blog';
 import { NextSeo } from 'next-seo';
-import Modal from '~/components/Modal';
 
 export const getStaticProps = async ({ params }: any) => {
   const post = await getSinglePost(params.slug);
@@ -56,6 +55,7 @@ export default function BlogPost({
         publishedAt={frontmatter.publishedAt}
         image={frontmatter.image}
         code={code}
+        url={url!}
       />
     </>
   );

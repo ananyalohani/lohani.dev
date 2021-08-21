@@ -1,13 +1,13 @@
-import React, { ReactElement } from 'react';
-import Link from 'next/link';
-import Layout from '~/layouts/Layout';
-import Container from '~/components/Container';
-import SocialIcon from '~/components/SocialIcon';
-import { getMDXComponent } from 'mdx-bundler/client';
 import { format } from 'date-fns';
-import DecorativeRule from '~/components/DecorativeRule';
+import { getMDXComponent } from 'mdx-bundler/client';
+import Link from 'next/link';
+import React, { ReactElement } from 'react';
 import { BiLink } from 'react-icons/bi';
 import { IoShareSocial } from 'react-icons/io5';
+import Container from '~/components/Container';
+import DecorativeRule from '~/components/DecorativeRule';
+import SocialIcon from '~/components/SocialIcon';
+import Layout from '~/layouts/Layout';
 
 interface Props {
   title: String;
@@ -16,6 +16,7 @@ interface Props {
   publishedAt: String;
   code: string;
   fixed?: boolean;
+  url: string;
 }
 
 export default function BlogPost({
@@ -25,6 +26,7 @@ export default function BlogPost({
   publishedAt,
   code,
   fixed = false,
+  url,
 }: Props): ReactElement {
   const Component = React.useMemo(() => getMDXComponent(code), [code]);
 
@@ -34,6 +36,10 @@ export default function BlogPost({
     new Date(dateArr[0], dateArr[1] - 1, dateArr[2]),
     'do LLLL, yyyy'
   );
+
+  const copyURL = () => {
+    navigator.clipboard.writeText(`${url}/blog/${slug}`);
+  };
 
   return (
     <Layout className={fixed ? 'h-screen overflow-y-hidden' : ''}>
@@ -49,7 +55,7 @@ export default function BlogPost({
                 <p className='text-sm text-gray-600'>{date}</p>
               </div>
               <div className='flex flex-row items-center space-x-3'>
-                <SocialIcon Icon={BiLink} />
+                <SocialIcon Icon={BiLink} onClick={copyURL} />
                 <Link href={`/blog/${slug}/share`}>
                   <a className='btn-link'>
                     <SocialIcon Icon={IoShareSocial} />
