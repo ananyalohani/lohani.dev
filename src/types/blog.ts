@@ -4,4 +4,5 @@ export interface PostMeta {
   frontmatter: {
     [key: string]: any;
   };
+  url: string;
 }

@@ -1,5 +1,3 @@
-import Head from 'next/head';
-import Image from 'next/image';
 import Layout from '~/components/Layout';
 import About from '~/sections/About';
 import RecentPosts from '~/sections/RecentPosts';
@@ -17,7 +15,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 
 export default function Home({ posts }: any) {
   return (
-    <Layout>
+    <Layout title='Ananya Lohani'>
       <About />
       <RecentPosts posts={posts} />
       <Contact />

@@ -20,10 +20,10 @@ export default function Header(): ReactElement {
   return (
     <header
       css={[
-        tw`border-b bg-sky-200 bg-opacity-70`,
+        tw`border-b bg-sky-200 bg-opacity-70 border-sky-300`,
         isBlog
-          ? tw`absolute top-0 left-0 right-0 z-0 border-sky-200 text-sky-300`
-          : tw`sticky top-0 z-10 backdrop-filter backdrop-blur-lg border-sky-300`,
+          ? tw`absolute top-0 left-0 right-0 z-0 text-sky-300`
+          : tw`sticky top-0 z-10 backdrop-filter backdrop-blur-lg`,
       ]}
       style={{
         height: isBlog ? '60vh' : 'auto',

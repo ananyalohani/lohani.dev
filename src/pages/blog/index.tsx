@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import Layout from '~/components/Layout';
 import { getAllPosts } from '~/lib/mdx';
-import Link from 'next/link';
-
 import { GetStaticProps } from 'next';
 import Container from '~/components/Container';
 import PostCard from '~/components/PostCard';
@@ -17,7 +15,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 
 export default function Blog({ posts }: any) {
   return (
-    <Layout>
+    <Layout title='Ananya Lohani • Blog'>
       <section>
         <Container heading='Blog' className='my-16'>
           {posts.map((post: any, key: any) => (
