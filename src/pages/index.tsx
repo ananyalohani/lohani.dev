@@ -1,4 +1,4 @@
-import Layout from '~/components/Layout';
+import Layout from '~/layouts/Layout';
 import About from '~/sections/About';
 import RecentPosts from '~/sections/RecentPosts';
 import Contact from '~/sections/Contact';

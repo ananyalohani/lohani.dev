@@ -25,7 +25,7 @@ export default function Layout({
       </Head>
       <div className='flex flex-col w-full min-h-screen'>
         <Header />
-        <main className='flex-1'>{children}</main>
+        <main className={`flex-1 ${className}`}>{children}</main>
         <Footer />
       </div>
     </>
