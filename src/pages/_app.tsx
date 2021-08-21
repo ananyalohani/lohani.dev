@@ -3,12 +3,10 @@ import '~/styles/clear-sans.css';
 import '~/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
-import { Container } from 'next/app';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  console.log(process.env.SITE_URL);
   return (
-    <Container>
+    <>
       <DefaultSeo
         defaultTitle='Ananya Lohani'
         titleTemplate='Ananya Lohani • %s'
@@ -28,7 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         }}
       />
       <Component {...pageProps} />
-    </Container>
+    </>
   );
 }
 export default MyApp;

@@ -1,21 +1,34 @@
 module.exports = {
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block',
+          },
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'origin-when-cross-origin',
+          },
+        ],
+      },
+    ];
+  },
   webpack: (config, { isServer }) => {
     if (!isServer) {
-      // Unset client-side javascript that only works server-side
-      // https://github.com/vercel/next.js/issues/7755#issuecomment-508633125
       config.node = { fs: 'empty', module: 'empty' };
     }
 
     return config;
   },
 };
-
-// Webpack 5 config
-// module.exports = {
-//   future: { webpack5: true },
-//   webpack: config => {
-//     config.resolve.fallback = { fs: false, module: false }
-
-//     return config
-//   },
-// }

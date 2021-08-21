@@ -35,6 +35,7 @@ export default function About(): ReactElement {
           <img
             src='/images/ananya.jpg'
             className='self-start w-56 mt-8 ml-5 rounded-full md:w-72 md:mt-0 md:self-auto'
+            alt='Ananya Lohani'
           />
         </div>
       </Container>

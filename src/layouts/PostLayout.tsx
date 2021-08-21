@@ -71,7 +71,11 @@ export default function PostLayout({
               <h1 style={{ marginBottom: '0' }}>{frontmatter.title}</h1>
               <div className='flex flex-row justify-between w-full'>
                 <div className='flex flex-row items-center space-x-1 sm:space-x-2'>
-                  <img src='/images/ananya.jpg' id='avatar' />
+                  <img
+                    src='/images/ananya.jpg'
+                    id='avatar'
+                    alt='Ananya Lohani'
+                  />
                   <p className='text-xs text-gray-600 sm:text-sm'>
                     Ananya Lohani
                   </p>
@@ -89,7 +93,11 @@ export default function PostLayout({
                 </div>
               </div>
               <hr style={{ marginTop: 0 }} />
-              <img src={frontmatter.image} id='main-img' />
+              <img
+                src={frontmatter.image}
+                id='main-img'
+                alt={frontmatter.title}
+              />
               <Component />
               <DecorativeRule />
             </article>
