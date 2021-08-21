@@ -15,7 +15,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 
 export default function Home({ posts }: any) {
   return (
-    <Layout title='Ananya Lohani'>
+    <Layout>
       <About />
       <RecentPosts posts={posts} />
       <Contact />

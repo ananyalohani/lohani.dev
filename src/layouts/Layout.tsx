@@ -2,9 +2,10 @@ import React, { ReactElement } from 'react';
 import Header from '~/components/Header';
 import Footer from '~/components/Footer';
 import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 
 interface Props {
-  title: String;
+  title?: string;
   description?: string;
   className?: String;
   children?: React.ReactNode;
@@ -18,11 +19,12 @@ export default function Layout({
 }: Props): ReactElement {
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>{title}</title>
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
         <meta name='description' content={description} />
-      </Head>
+      </Head> */}
+      {title && <NextSeo title={title} />}
       <div className='flex flex-col w-full min-h-screen'>
         <Header />
         <main className={`flex-1 ${className}`}>{children}</main>

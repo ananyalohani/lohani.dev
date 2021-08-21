@@ -15,22 +15,6 @@ export default function RecentPosts({ posts }: any): ReactElement {
               link={`/blog/${post.slug}`}
             />
           ))}
-          {posts.map((post: any, key: any) => (
-            <PostCard
-              heading={post.frontmatter.title}
-              blurb={post.frontmatter.description}
-              key={key}
-              link={`/blog/${post.slug}`}
-            />
-          ))}
-          {posts.map((post: any, key: any) => (
-            <PostCard
-              heading={post.frontmatter.title}
-              blurb={post.frontmatter.description}
-              key={key}
-              link={`/blog/${post.slug}`}
-            />
-          ))}
         </div>
       </Container>
     </section>

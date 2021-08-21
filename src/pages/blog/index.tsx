@@ -15,7 +15,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 
 export default function Blog({ posts }: any) {
   return (
-    <Layout title='Ananya Lohani • Blog'>
+    <Layout title='Blog'>
       <section>
         <Container heading='Blog' className='my-16'>
           {posts.map((post: any, key: any) => (

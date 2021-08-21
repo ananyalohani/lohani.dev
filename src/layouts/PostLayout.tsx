@@ -1,5 +1,4 @@
 import React, { ReactElement } from 'react';
-import Link from 'next/link';
 import Layout from '~/layouts/Layout';
 import Container from '~/components/Container';
 import SocialIcon from '~/components/SocialIcon';
@@ -39,7 +38,8 @@ export default function PostLayout({
   return (
     <>
       <NextSeo
-        title={`${frontmatter.title} • Ananya Lohani`}
+        titleTemplate='%s • Ananya Lohani'
+        title={frontmatter.title}
         description={frontmatter.description}
         canonical={`${url}/blog/${slug}`}
         openGraph={{
@@ -63,17 +63,24 @@ export default function PostLayout({
 
       <Layout title={frontmatter.title} description={frontmatter.description}>
         <section className='z-10 mt-40 transform translate-z-0'>
-          <Container size='big' className='px-20 py-16 bg-white rounded-2xl'>
+          <Container
+            size='big'
+            className='px-6 py-8 bg-white sm:px-12 sm:py-16 lg:px-20 lg:py-16 rounded-2xl'
+          >
             <article className='mx-auto my-0 prose max-w-none'>
               <h1 style={{ marginBottom: '0' }}>{frontmatter.title}</h1>
               <div className='flex flex-row justify-between w-full'>
-                <div className='flex flex-row items-center space-x-2'>
+                <div className='flex flex-row items-center space-x-1 sm:space-x-2'>
                   <img src='/images/ananya.jpg' id='avatar' />
-                  <p className='text-sm text-gray-600'>Ananya Lohani</p>
-                  <p className='text-sm font-bold text-gray-600'>·</p>
-                  <p className='text-sm text-gray-600'>{date}</p>
+                  <p className='text-xs text-gray-600 sm:text-sm'>
+                    Ananya Lohani
+                  </p>
+                  <p className='text-xs font-bold text-gray-600 sm:text-sm'>
+                    ·
+                  </p>
+                  <p className='text-xs text-gray-600 sm:text-sm'>{date}</p>
                 </div>
-                <div className='flex flex-row items-center space-x-3'>
+                <div className='flex flex-row items-center spzce-x-2 sm:space-x-3'>
                   <SocialIcon Icon={BiLink} onClick={copyURL} />
                   <SocialIcon
                     Icon={IoShareSocial}
