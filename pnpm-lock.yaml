@@ -11,6 +11,7 @@ specifiers:
   babel-plugin-styled-components: ^1.13.2
   date-fns: ^2.23.0
   esbuild: ^0.12.20
+  focus-trap-react: ^8.7.1
   gray-matter: ^4.0.3
   mdx-bundler: ^6.0.1
   next: 10.2.3
@@ -24,6 +25,7 @@ specifiers:
   react-dom: 17.0.2
   react-icons: ^4.2.0
   react-is: ^17.0.2
+  react-share: ^4.4.0
   styled-components: ^5.3.0
   tailwindcss: ^2.2.7
   twin.macro: ^2.6.2
@@ -33,6 +35,7 @@ dependencies:
   '@prisma/client': 2.29.1_prisma@2.29.1
   '@tailwindcss/typography': 0.4.1_tailwindcss@2.2.7
   esbuild: 0.12.22
+  focus-trap-react: 8.7.1_react-dom@17.0.2+react@17.0.2
   gray-matter: 4.0.3
   mdx-bundler: 6.0.1_esbuild@0.12.22
   next: 10.2.3_c8cdd86752aa86fb2b6e32ae91115ebe
@@ -43,6 +46,7 @@ dependencies:
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-icons: 4.2.0_react@17.0.2
+  react-share: 4.4.0_react@17.0.2
   styled-components: 5.3.0_281a4fa50a045c9112baf635f3bc27a7
 
 devDependencies:
@@ -966,6 +970,10 @@ packages:
     resolution: {integrity: sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==}
     dev: false
 
+  /classnames/2.3.1:
+    resolution: {integrity: sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==}
+    dev: false
+
   /clean-set/1.1.2:
     resolution: {integrity: sha512-cA8uCj0qSoG9e0kevyOWXwPaELRPVg5Pxp6WskLMwerx257Zfnh8Nl0JBH59d7wQzij2CK7qEfJQK3RjuKKIug==}
     dev: true
@@ -1558,6 +1566,24 @@ packages:
     deprecated: flatten is deprecated in favor of utility frameworks such as lodash.
     dev: false
 
+  /focus-trap-react/8.7.1_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-1bCCtdZXSzYVrMEcvHfHq+706OSM5r3iZsBFXy9zbnf3+5dyCFiEVWix7Sf6jUaOgshjpyDvZHiBhSlcsO9k3A==}
+    peerDependencies:
+      prop-types: ^15.7.2
+      react: '>=16.0.0'
+      react-dom: '>=16.0.0'
+    dependencies:
+      focus-trap: 6.6.1
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    dev: false
+
+  /focus-trap/6.6.1:
+    resolution: {integrity: sha512-x9BWuAeF5UrfWuYKJ3jYrjcVYSYptS9CqtxH5IH7lPlZrMsaugKeAa0HtoZSBZe5DmeTMx2m0qY464ZMzqarzw==}
+    dependencies:
+      tabbable: 5.2.1
+    dev: false
+
   /foreach/2.0.5:
     resolution: {integrity: sha1-C+4AUBiusmDQo6865ljdATbsG5k=}
     dev: false
@@ -2110,6 +2136,12 @@ packages:
     optionalDependencies:
       graceful-fs: 4.2.8
     dev: true
+
+  /jsonp/0.2.1:
+    resolution: {integrity: sha1-pltPoPEL2nGaBUQep7lMVfPhW64=}
+    dependencies:
+      debug: 2.6.9
+    dev: false
 
   /keyv/4.0.3:
     resolution: {integrity: sha512-zdGa2TOpSZPq5mU6iowDARnMBZgtCqJ11dJROFi6tg6kTn4nuUdU09lFyLFSaHrWqpIJ+EBq4E8/Dc0Vx5vLdA==}
@@ -3535,6 +3567,17 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
+  /react-share/4.4.0_react@17.0.2:
+    resolution: {integrity: sha512-POe8Ge/JT9Ew9iyW7CiYsCCWCb8uMJWqFl9S7W0fJ/oH5gBJNzukH0bL5vSr17KKG5h15d3GfKaoviI22BKeYA==}
+    engines: {node: '>=6.9.0', npm: '>=5.0.0'}
+    peerDependencies:
+      react: ^16.3.0 || ^17
+    dependencies:
+      classnames: 2.3.1
+      jsonp: 0.2.1
+      react: 17.0.2
+    dev: false
+
   /react/17.0.2:
     resolution: {integrity: sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==}
     engines: {node: '>=0.10.0'}
@@ -3975,6 +4018,10 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       has-flag: 4.0.0
+    dev: false
+
+  /tabbable/5.2.1:
+    resolution: {integrity: sha512-40pEZ2mhjaZzK0BnI+QGNjJO8UYx9pP5v7BGe17SORTO0OEuuaAwQTkAp8whcZvqon44wKFOikD+Al11K3JICQ==}
     dev: false
 
   /tailwindcss/2.2.7_7b69a43ec4689fa7484dee35f79a7806:

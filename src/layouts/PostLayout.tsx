@@ -13,10 +13,13 @@ import { NextSeo } from 'next-seo';
 
 interface Props {
   meta: PostMeta;
-  fixed?: boolean;
+  setModalOpen: React.Dispatch<React.SetStateAction<Boolean>>;
 }
 
-export default function BlogPost({ meta, fixed = false }: Props): ReactElement {
+export default function PostLayout({
+  meta,
+  setModalOpen,
+}: Props): ReactElement {
   const { code, slug, frontmatter, url } = meta;
   const Component = React.useMemo(() => getMDXComponent(code), [code]);
 
@@ -28,6 +31,10 @@ export default function BlogPost({ meta, fixed = false }: Props): ReactElement {
     new Date(dateArr[0], dateArr[1] - 1, dateArr[2]),
     'do LLLL, yyyy'
   );
+
+  const copyURL = () => {
+    navigator.clipboard.writeText(`${url}/blog/${slug}`);
+  };
 
   return (
     <>
@@ -53,11 +60,8 @@ export default function BlogPost({ meta, fixed = false }: Props): ReactElement {
           cardType: 'summary_large_image',
         }}
       />
-      <Layout
-        title={frontmatter.title}
-        description={frontmatter.description}
-        className={fixed ? 'h-screen overflow-y-hidden' : ''}
-      >
+
+      <Layout title={frontmatter.title} description={frontmatter.description}>
         <section className='z-10 mt-40 transform translate-z-0'>
           <Container size='big' className='px-20 py-16 bg-white rounded-2xl'>
             <article className='mx-auto my-0 prose max-w-none'>
@@ -70,12 +74,11 @@ export default function BlogPost({ meta, fixed = false }: Props): ReactElement {
                   <p className='text-sm text-gray-600'>{date}</p>
                 </div>
                 <div className='flex flex-row items-center space-x-3'>
-                  <SocialIcon Icon={BiLink} />
-                  <Link href={`/blog/${slug}/share`}>
-                    <a className='btn-link'>
-                      <SocialIcon Icon={IoShareSocial} />
-                    </a>
-                  </Link>
+                  <SocialIcon Icon={BiLink} onClick={copyURL} />
+                  <SocialIcon
+                    Icon={IoShareSocial}
+                    onClick={() => setModalOpen(true)}
+                  />
                 </div>
               </div>
               <hr style={{ marginTop: 0 }} />
