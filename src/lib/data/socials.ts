@@ -37,12 +37,12 @@ const socials: Social[] = [
     text: 'Twitter',
     link: 'https://twitter.com/ananyalohani_',
   },
-  {
-    color: 'pink',
-    icon: FaInstagram,
-    text: 'Instagram',
-    link: 'https://instagram.com/ananyalohani',
-  },
+  // {
+  //   color: 'pink',
+  //   icon: FaInstagram,
+  //   text: 'Instagram',
+  //   link: 'https://instagram.com/ananyalohani',
+  // },
   {
     color: 'indigo',
     icon: Polywork,

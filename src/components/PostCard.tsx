@@ -5,21 +5,26 @@ interface Props {
   heading: string;
   blurb: String;
   link: string;
-  image?: string;
+  image: string;
 }
 
 export default function PostCard({ heading, blurb, link, image }: Props) {
   return (
-    <div className='max-w-xs p-4 transition-all border-2 border-gray-300 rounded-md cursor-pointer bg-gray-50 group hover:bg-sky-100 hover:border-sky-200'>
+    <div
+      className='transition-all rounded-md cursor-pointer group'
+      style={{ maxWidth: '50%' }}
+    >
       <Link href={link}>
-        <a className='btn-link'>
-          {image && <img src={image} className='mb-3 rounded' alt={heading} />}
-          <h2 className='mb-2 text-lg leading-6 transition-all group-hover:text-sky-400'>
-            {heading}
-          </h2>
-          <p className='text-sm text-gray-700 transition-all group-hover:text-sky-900'>
-            {blurb}
-          </p>
+        <a className='space-y-5 btn-link'>
+          <img src={image} className='rounded-lg' alt={heading} />
+          <div className='space-y-2'>
+            <h2 className='text-xl leading-6 transition-all group-hover:text-sky-400'>
+              {heading}
+            </h2>
+            <p className='text-gray-700 truncate transition-all overflow-ellipsis'>
+              {blurb}
+            </p>
+          </div>
         </a>
       </Link>
     </div>

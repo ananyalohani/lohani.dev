@@ -13,6 +13,7 @@ export default function RecentPosts({ posts }: any): ReactElement {
               blurb={post.frontmatter.description}
               key={key}
               link={`/blog/${post.slug}`}
+              image={post.frontmatter.image}
             />
           ))}
         </div>

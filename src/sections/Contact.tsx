@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react';
 import Container from '~/components/Container';
 import Button from '~/components/Button';
 import socials from '~/lib/data/socials';
+import Link from 'next/link';
 
 export default function Contact(): ReactElement {
   return (
@@ -9,8 +10,12 @@ export default function Contact(): ReactElement {
       <Container heading='Contact' headingSize='small' className='my-12'>
         <div>
           <p>
-            If you like my work and are interested in working with me, you can
-            reach me at <a href='work@lohani.dev'>work@lohani.dev</a>.
+            If you like my{' '}
+            <Link href='/projects'>
+              <a>work</a>
+            </Link>{' '}
+            and are interested in working with me, you can reach me at{' '}
+            <a href='mailto:work@lohani.dev'>work@lohani.dev</a>.
           </p>
           <br />
           <p>You can also connect with me on the following platforms:</p>

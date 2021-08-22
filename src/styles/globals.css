@@ -5,7 +5,7 @@
 }
 
 a:not(.btn-link) {
-  @apply no-underline transition-all ease-in-out text-sky-500 hover:border-b border-sky-600 hover:text-sky-600;
+  @apply font-bold text-gray-800 no-underline transition-all ease-in-out hover:text-sky-500;
 }
 
 body {
@@ -54,4 +54,13 @@ p {
 .prose #avatar {
   @apply w-8 rounded-full !important;
   margin: 1.2rem 0.5rem 1.2rem 0;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  white-space: normal;
 }
