@@ -20,6 +20,12 @@ module.exports = {
             key: 'Referrer-Policy',
             value: 'origin-when-cross-origin',
           },
+          //           {
+          //             key: 'Content-Security-Policy',
+          //             value: `default-src 'none';
+
+          // `,
+          //           },
         ],
       },
     ];
