@@ -13,6 +13,7 @@ export default function Footer(): ReactElement {
       href={href}
       target='_blank'
       className='text-gray-700 transition-all ease-in-out btn-link hover:text-gray-800 hover:border-b hover:border-gray-800'
+      rel='noopener'
     >
       {children}
     </a>
