@@ -5,7 +5,7 @@
 }
 
 a:not(.btn-link) {
-  @apply font-bold text-gray-800 no-underline transition-all ease-in-out hover:text-sky-500;
+  @apply font-bold text-gray-800 no-underline transition-all ease-in-out hover:text-sky-600 text-sky-500;
 }
 
 body {
@@ -63,4 +63,17 @@ p {
   -webkit-line-clamp: 2; /* number of lines to show */
   -webkit-box-orient: vertical;
   white-space: normal;
+}
+
+form label.required::after {
+  content: '*';
+  @apply ml-1 text-sky-400;
+}
+
+form label {
+  @apply block text-gray-700;
+}
+
+form .input {
+  @apply block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-sky-300 focus:ring focus:ring-sky-200 focus:ring-opacity-50 font-display;
 }

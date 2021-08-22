@@ -9,6 +9,7 @@ interface Props {
   color?: String;
   link?: string;
   id?: string;
+  type?: string;
 }
 
 export default function Button({
@@ -18,6 +19,7 @@ export default function Button({
   color,
   id,
   link,
+  type,
 }: Props): ReactElement {
   return (
     <button
@@ -38,6 +40,8 @@ export default function Button({
           ? tw`hover:bg-teal-50 hover:border-teal-500 hover:text-teal-500 hover:border-opacity-30`
           : tw`hover:bg-sky-100 hover:border-sky-200 hover:text-sky-500`,
       ]}
+      // @ts-ignore
+      type={type ? type : 'button'}
     >
       <a
         href={link}

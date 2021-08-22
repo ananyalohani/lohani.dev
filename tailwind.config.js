@@ -6,6 +6,11 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      maxWidth: {
+        '1/4': '25%',
+        '1/2': '50%',
+        '3/4': '75%',
+      },
       width: {
         100: '28rem',
         110: '30rem',
@@ -36,5 +41,5 @@ module.exports = {
       display: ['Source Sans Pro', 'ui-sans-serif', 'system-ui'],
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],
 };

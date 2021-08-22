@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@prisma/client": "^2.29.1",
+    "@tailwindcss/forms": "^0.3.3",
     "@tailwindcss/typography": "^0.4.1",
     "esbuild": "^0.12.20",
     "focus-trap-react": "^8.7.1",
