@@ -22,7 +22,7 @@ export default function Contact(): ReactElement {
   return (
     <section id='contact'>
       <Container heading='Contact' headingSize='small' className='my-12'>
-        <div className='flex flex-col space-y-4'>
+        <div className='flex flex-col space-y-6'>
           <p>
             If you like my{' '}
             <Link href='/projects'>
@@ -31,25 +31,27 @@ export default function Contact(): ReactElement {
             and are interested in working with me, you can reach me at{' '}
             <a href='mailto:work@lohani.dev'>work@lohani.dev</a>.
           </p>
-          <p>You can also connect with me on the following platforms:</p>
-          <div className='flex flex-wrap gap-3 md:gap-4'>
-            {socials.map((social, key) => (
-              <Button
-                text={social.text}
-                className=''
-                Icon={social.icon}
-                color={social.color}
-                link={social.link}
-                id={social.text === 'Polywork' ? 'polywork' : ''}
-                key={key}
-              />
-            ))}
+          <div className='space-y-3'>
+            <p>You can also connect with me on the following platforms:</p>
+            <div className='flex flex-wrap gap-3 md:gap-4'>
+              {socials.map((social, key) => (
+                <Button
+                  text={social.text}
+                  className=''
+                  Icon={social.icon}
+                  color={social.color}
+                  link={social.link}
+                  id={social.text === 'Polywork' ? 'polywork' : ''}
+                  key={key}
+                />
+              ))}
+            </div>
           </div>
-          <div>
+          <div className='space-y-3'>
             <p>Alternately you can fill the contact form below:</p>
             <form
               onSubmit={submitForm}
-              className='grid max-w-lg grid-cols-1 gap-4 mt-6'
+              className='grid max-w-lg grid-cols-1 gap-4'
             >
               <div>
                 <label className='required' htmlFor='name'>

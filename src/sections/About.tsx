@@ -6,7 +6,7 @@ export default function About(): ReactElement {
     <section id='about'>
       <Container headingSize='big' className='my-16'>
         <div className='flex flex-col items-center justify-between md:flex-row'>
-          <div className='flex flex-col space-y-4'>
+          <div className='flex flex-col space-y-6'>
             <h1 className='mb-2 text-3xl sm:text-4xl'>
               Hello there, I'm Ananya.
             </h1>
