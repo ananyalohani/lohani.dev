@@ -88,3 +88,16 @@ code {
   font-family: 'Fira Code', monospace !important;
   @apply py-0.5 px-1 bg-gray-100 border border-gray-200 rounded-md font-medium text-pink-600;
 }
+
+.prose p {
+  @apply leading-6 sm:leading-7 !important;
+}
+
+.prose li {
+  @apply leading-6 sm:leading-7 text-sm sm:text-base !important;
+}
+
+.prose blockquote p,
+.prose blockquote li {
+  @apply text-coolGray-500 normal-case font-medium not-italic !important;
+}

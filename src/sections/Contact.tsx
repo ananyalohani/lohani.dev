@@ -51,12 +51,12 @@ export default function Contact(): ReactElement {
             <p>Alternately you can fill the contact form below:</p>
             <form
               onSubmit={submitForm}
-              className='flex flex-col max-w-lg space-y-3'
+              className='flex flex-col max-w-2xl space-y-3'
             >
-              <div className='flex flex-row flex-1 space-x-3'>
+              <div className='flex flex-col flex-1 space-y-3 sm:space-y-0 sm:space-x-3 sm:flex-row'>
                 <div className='flex-1'>
                   <label
-                    className='text-sm font-medium uppercase required'
+                    className='text-xs font-medium uppercase sm:text-sm required'
                     htmlFor='name'
                   >
                     Name
@@ -74,7 +74,7 @@ export default function Contact(): ReactElement {
                 </div>
                 <div className='flex-1'>
                   <label
-                    className='text-sm font-medium uppercase required'
+                    className='text-xs font-medium uppercase sm:text-sm required'
                     htmlFor='email'
                   >
                     Email
@@ -93,7 +93,7 @@ export default function Contact(): ReactElement {
               </div>
               <div>
                 <label
-                  className='text-sm font-medium uppercase required'
+                  className='text-xs font-medium uppercase sm:text-sm required'
                   htmlFor='message'
                 >
                   Message

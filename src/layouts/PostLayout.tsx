@@ -67,8 +67,10 @@ export default function PostLayout({
             size='big'
             className='px-6 py-8 bg-white sm:px-12 sm:py-16 lg:px-20 lg:py-16 rounded-2xl'
           >
+            <h1 className='mb-0 text-3xl font-extrabold text-gray-800 md:text-4xl'>
+              {frontmatter.title}
+            </h1>
             <article className='mx-auto my-0 prose max-w-none'>
-              <h1 style={{ marginBottom: '0' }}>{frontmatter.title}</h1>
               <div className='flex flex-row justify-between w-full'>
                 <div className='flex flex-row items-center space-x-1 sm:space-x-2'>
                   <img

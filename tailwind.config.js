@@ -19,6 +19,7 @@ module.exports = {
       colors: {
         sky: colors.sky,
         gray: colors.blueGray,
+        coolGray: colors.coolGray,
         teal: colors.teal,
         emerald: colors.emerald,
         green: colors.green,
@@ -29,20 +30,19 @@ module.exports = {
           css: {
             margin: '5rem 0',
             h1: {
-              color: theme('colors.gray.800'),
+              color: theme('colors.coolGray.800'),
             },
             h2: {
-              color: theme('colors.gray.800'),
+              color: theme('colors.coolGray.800'),
             },
             h3: {
-              color: theme('colors.gray.800'),
+              color: theme('colors.coolGray.800'),
             },
             h4: {
-              color: theme('colors.gray.800'),
+              color: theme('colors.coolGray.800'),
             },
             p: {
-              lineHeight: '1.7rem',
-              color: theme('colors.gray.800'),
+              color: theme('colors.coolGray.800'),
             },
             blockquote: {
               'p:first-of-type::before': {
@@ -51,6 +51,7 @@ module.exports = {
               'p:last-of-type::after': {
                 content: '"" !important',
               },
+              color: theme('colors.gray.700'),
             },
             code: {
               '&::before': {
