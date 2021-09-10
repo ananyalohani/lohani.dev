@@ -1,11 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
   @apply box-border p-0 m-0;
 }
 
 a:not(.btn-link) {
-  @apply font-bold text-gray-800 no-underline transition-all ease-in-out hover:text-sky-600 text-sky-500;
+  @apply font-medium no-underline transition-all ease-in-out hover:text-sky-600 text-sky-500;
+}
+
+a.alt-link {
+  @apply font-medium text-gray-700 no-underline transition-all ease-in-out hover:text-gray-800;
 }
 
 body {
@@ -24,7 +30,7 @@ h6 {
 
 header h1,
 header h2 {
-  @apply font-semibold;
+  @apply font-medium;
 }
 
 p {
@@ -76,4 +82,9 @@ form label {
 
 form .input {
   @apply block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-sky-300 focus:ring focus:ring-sky-200 focus:ring-opacity-50 font-display;
+}
+
+code {
+  font-family: 'Fira Code', monospace !important;
+  @apply py-0.5 px-1 bg-gray-100 border border-gray-200 rounded-md font-medium text-pink-600;
 }

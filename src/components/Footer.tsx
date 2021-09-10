@@ -9,12 +9,7 @@ export default function Footer(): ReactElement {
     href: string;
     children: React.ReactNode;
   }) => (
-    <a
-      href={href}
-      target='_blank'
-      className='text-gray-700 transition-all ease-in-out btn-link hover:text-gray-800'
-      rel='noopener'
-    >
+    <a href={href} target='_blank' className='alt-link' rel='noopener'>
       {children}
     </a>
   );

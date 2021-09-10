@@ -23,7 +23,7 @@ export default function Button({
 }: Props): ReactElement {
   return (
     <button
-      className={`p-2 transition-all ease-out border border-gray-300 rounded-md cursor-pointer bg-gray-50 text-gray-700 group ${className}`}
+      className={`py-2 px-3 transition-all ease-out border border-gray-300 rounded-md cursor-pointer bg-gray-50 text-gray-700 group ${className}`}
       id={id}
       css={[
         color === 'blue'
@@ -33,12 +33,12 @@ export default function Button({
           : color === 'pink'
           ? tw`hover:bg-pink-50 hover:border-pink-500 hover:text-pink-500 hover:border-opacity-30`
           : color === 'black'
-          ? tw`hover:bg-black hover:bg-opacity-10 hover:border-black hover:text-black hover:border-opacity-20`
+          ? tw`hover:bg-black hover:bg-opacity-5 hover:border-black hover:text-black hover:border-opacity-20`
           : color === 'indigo'
           ? tw`hover:bg-indigo-50 hover:border-indigo-500 hover:text-indigo-500 hover:border-opacity-30`
           : color === 'teal'
           ? tw`hover:bg-teal-50 hover:border-teal-500 hover:text-teal-500 hover:border-opacity-30`
-          : tw`hover:bg-sky-100 hover:border-sky-200 hover:text-sky-500`,
+          : tw`hover:bg-sky-50 hover:border-sky-200 hover:text-sky-500`,
       ]}
       // @ts-ignore
       type={type ? type : 'button'}
@@ -51,7 +51,7 @@ export default function Button({
       >
         {/* @ts-ignore */}
         {Icon && <Icon className='w-5 h-5' />}
-        <div className='text-sm font-bold sm:text-base'>{text}</div>
+        <div className='text-sm font-semibold sm:text-base'>{text}</div>
       </a>
     </button>
   );

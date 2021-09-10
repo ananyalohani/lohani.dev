@@ -6,7 +6,7 @@ export default function About(): ReactElement {
     <section id='about'>
       <Container headingSize='big' className='my-16'>
         <div className='flex flex-col items-center justify-between md:flex-row'>
-          <div className='flex flex-col space-y-6'>
+          <div className='flex flex-col space-y-5'>
             <h1 className='mb-2 text-3xl sm:text-4xl'>
               Hello there, I'm Ananya.
             </h1>
@@ -34,7 +34,7 @@ export default function About(): ReactElement {
           </div>
           <img
             src='/images/ananya.jpg'
-            className='self-start w-56 mt-8 ml-5 rounded-full md:w-72 md:mt-0 md:self-auto'
+            className='self-start w-56 mt-8 ml-10 rounded-full md:w-72 md:mt-0 md:self-auto'
             alt='Ananya Lohani'
           />
         </div>

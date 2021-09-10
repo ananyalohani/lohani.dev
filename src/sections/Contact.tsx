@@ -22,18 +22,18 @@ export default function Contact(): ReactElement {
   return (
     <section id='contact'>
       <Container heading='Contact' headingSize='small' className='my-12'>
-        <div className='flex flex-col space-y-6'>
-          <p>
-            If you like my{' '}
-            <Link href='/projects'>
-              <a>work</a>
-            </Link>{' '}
-            and are interested in working with me, you can reach me at{' '}
-            <a href='mailto:work@lohani.dev'>work@lohani.dev</a>.
-          </p>
-          <div className='space-y-3'>
+        <div>
+          <div className='mb-8 space-y-3 '>
+            <p>
+              If you like my{' '}
+              <Link href='/projects'>
+                <a>work</a>
+              </Link>{' '}
+              and are interested in working with me, you can reach me at{' '}
+              <a href='mailto:work@lohani.dev'>work@lohani.dev</a>.
+            </p>
             <p>You can also connect with me on the following platforms:</p>
-            <div className='flex flex-wrap gap-3 md:gap-4'>
+            <div className='flex flex-wrap gap-3 md:gap-3'>
               {socials.map((social, key) => (
                 <Button
                   text={social.text}
@@ -47,48 +47,59 @@ export default function Contact(): ReactElement {
               ))}
             </div>
           </div>
-          <div className='space-y-3'>
+          <div className='space-y-4'>
             <p>Alternately you can fill the contact form below:</p>
             <form
               onSubmit={submitForm}
-              className='grid max-w-lg grid-cols-1 gap-4'
+              className='flex flex-col max-w-lg space-y-3'
             >
-              <div>
-                <label className='required' htmlFor='name'>
-                  Name
-                </label>
-                <input
-                  type='text'
-                  className='input'
-                  name='name'
-                  value={fields.name}
-                  required
-                  onChange={(e: any) => {
-                    setFields({ ...fields, name: e.target.value });
-                  }}
-                />
+              <div className='flex flex-row flex-1 space-x-3'>
+                <div className='flex-1'>
+                  <label
+                    className='text-sm font-medium uppercase required'
+                    htmlFor='name'
+                  >
+                    Name
+                  </label>
+                  <input
+                    type='text'
+                    className='input'
+                    name='name'
+                    value={fields.name}
+                    required
+                    onChange={(e: any) => {
+                      setFields({ ...fields, name: e.target.value });
+                    }}
+                  />
+                </div>
+                <div className='flex-1'>
+                  <label
+                    className='text-sm font-medium uppercase required'
+                    htmlFor='email'
+                  >
+                    Email
+                  </label>
+                  <input
+                    type='text'
+                    className='input'
+                    name='email'
+                    value={fields.email}
+                    required
+                    onChange={(e: any) => {
+                      setFields({ ...fields, email: e.target.value });
+                    }}
+                  />
+                </div>
               </div>
               <div>
-                <label className='required' htmlFor='email'>
-                  Email
-                </label>
-                <input
-                  type='text'
-                  className='input'
-                  name='email'
-                  value={fields.email}
-                  required
-                  onChange={(e: any) => {
-                    setFields({ ...fields, email: e.target.value });
-                  }}
-                />
-              </div>
-              <div>
-                <label className='required' htmlFor='message'>
+                <label
+                  className='text-sm font-medium uppercase required'
+                  htmlFor='message'
+                >
                   Message
                 </label>
                 <textarea
-                  className='input'
+                  className='h-36 input'
                   name='message'
                   value={fields.message}
                   required

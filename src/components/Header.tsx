@@ -33,7 +33,7 @@ export default function Header(): ReactElement {
       <Container className='flex flex-row items-center justify-between py-5'>
         <h1 className='text-xl sm:text-2xl'>
           <Link href='/'>
-            <a className='btn-link'>Ananya Lohani</a>
+            <a className='alt-link'>Ananya Lohani</a>
           </Link>
         </h1>
         <div className='flex flex-row space-x-3 text-base font-normal sm:text-lg sm:space-x-5'>

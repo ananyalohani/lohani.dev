@@ -24,21 +24,53 @@ module.exports = {
         green: colors.green,
         orange: colors.orange,
       },
-      typography: {
+      typography: (theme) => ({
         DEFAULT: {
           css: {
             margin: '5rem 0',
             h1: {
-              color: colors.blueGray[800],
+              color: theme('colors.gray.800'),
+            },
+            h2: {
+              color: theme('colors.gray.800'),
+            },
+            h3: {
+              color: theme('colors.gray.800'),
+            },
+            h4: {
+              color: theme('colors.gray.800'),
+            },
+            p: {
+              lineHeight: '1.7rem',
+              color: theme('colors.gray.800'),
+            },
+            blockquote: {
+              'p:first-of-type::before': {
+                content: '"" !important',
+              },
+              'p:last-of-type::after': {
+                content: '"" !important',
+              },
+            },
+            code: {
+              '&::before': {
+                content: '"" !important',
+              },
+              '&::after': {
+                content: '"" !important',
+              },
+              fontWeight: 500,
+              color: '',
             },
           },
         },
-      },
+      }),
     },
     fontFamily: {
-      sans: ['Clear Sans', 'ui-sans-serif', 'system-ui'],
-      body: ['Clear Sans', 'ui-sans-serif', 'system-ui'],
-      display: ['Source Sans Pro', 'ui-sans-serif', 'system-ui'],
+      sans: ['Heebo', 'ui-sans-serif', 'system-ui'],
+      body: ['Heebo', 'ui-sans-serif', 'system-ui'],
+      display: ['Heebo', 'ui-sans-serif', 'system-ui'],
+      code: ['Fira Code', 'monospace'],
     },
   },
   plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],

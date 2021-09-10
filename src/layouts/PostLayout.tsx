@@ -76,13 +76,13 @@ export default function PostLayout({
                     id='avatar'
                     alt='Ananya Lohani'
                   />
-                  <p className='text-xs text-gray-600 sm:text-sm'>
+                  <div className='text-xs text-gray-600 sm:text-sm'>
                     Ananya Lohani
-                  </p>
-                  <p className='text-xs font-bold text-gray-600 sm:text-sm'>
+                  </div>
+                  <div className='text-xs font-bold text-gray-600 sm:text-sm'>
                     ·
-                  </p>
-                  <p className='text-xs text-gray-600 sm:text-sm'>{date}</p>
+                  </div>
+                  <div className='text-xs text-gray-600 sm:text-sm'>{date}</div>
                 </div>
                 <div className='flex flex-row items-center spzce-x-2 sm:space-x-3'>
                   <SocialIcon Icon={BiLink} onClick={copyURL} />
