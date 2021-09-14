@@ -1,5 +1,4 @@
 import '~/styles/tailwind.css';
-import '~/styles/clear-sans.css';
 import '~/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';

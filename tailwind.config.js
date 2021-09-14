@@ -68,9 +68,9 @@ module.exports = {
       }),
     },
     fontFamily: {
-      sans: ['Heebo', 'ui-sans-serif', 'system-ui'],
-      body: ['Heebo', 'ui-sans-serif', 'system-ui'],
-      display: ['Heebo', 'ui-sans-serif', 'system-ui'],
+      sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+      body: ['Inter', 'ui-sans-serif', 'system-ui'],
+      display: ['Barlow', 'ui-sans-serif', 'system-ui'],
       code: ['Fira Code', 'monospace'],
     },
   },

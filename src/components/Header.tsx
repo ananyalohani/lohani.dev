@@ -36,7 +36,7 @@ export default function Header(): ReactElement {
             <a className='alt-link'>Ananya Lohani</a>
           </Link>
         </h1>
-        <nav className='flex flex-row space-x-3 text-base font-normal sm:text-lg sm:space-x-5'>
+        <nav className='flex flex-row space-x-3 text-base sm:text-lg sm:space-x-5'>
           {navigation.map((nav, key) => (
             <h2
               className='text-gray-700 transition-all ease-out hover:text-sky-500'

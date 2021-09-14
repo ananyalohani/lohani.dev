@@ -20,11 +20,11 @@ export default function Footer(): ReactElement {
         <div>
           Built with{' '}
           <Link href='https://nextjs.org'>
-            <strong>Next.js</strong>
+            <a className='alt-link'>Next.js</a>
           </Link>{' '}
           and{' '}
           <Link href='https://tailwindcss.com'>
-            <strong>Tailwind</strong>
+            <a className='alt-link'>Tailwind</a>
           </Link>
         </div>
         <div>&copy; Ananya Lohani 2021</div>
