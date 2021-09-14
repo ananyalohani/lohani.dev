@@ -122,13 +122,13 @@ export const shareSocials: ShareSocial[] = [
 
 export interface Social {
   color: string;
-  text: String;
+  text: string;
   icon: IconType | (({ dimensions }: any) => ReactElement);
   link: string;
 }
 
 export interface ShareSocial {
-  name: String;
+  name: string;
   icon: IconType;
   shareComponent: any;
   color: string;

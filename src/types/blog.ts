@@ -8,7 +8,7 @@ export interface PostMeta {
 export interface Frontmatter {
   title: string;
   description: string;
-  publishedAt: String;
-  category: String;
+  publishedAt: string;
+  category: string;
   image?: string;
 }

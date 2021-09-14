@@ -7,7 +7,7 @@ import { NextSeo } from 'next-seo';
 interface Props {
   title?: string;
   description?: string;
-  className?: String;
+  className?: string;
   children?: React.ReactNode;
 }
 

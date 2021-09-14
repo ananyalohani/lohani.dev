@@ -3,10 +3,10 @@ import tw from 'twin.macro';
 import { IconType } from 'react-icons/lib';
 
 interface Props {
-  text: String;
+  text: string;
   Icon?: IconType | ReactElement;
   className?: string;
-  color?: String;
+  color?: string;
   link?: string;
   id?: string;
   type?: string;

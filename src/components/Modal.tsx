@@ -3,7 +3,7 @@ import tw from 'twin.macro';
 import FocusTrap from 'focus-trap-react';
 
 interface Props {
-  className?: String;
+  className?: string;
   open: Boolean;
   children: ReactNode;
   onClose?: (...props: any) => any;

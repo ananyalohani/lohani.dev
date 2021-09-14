@@ -2,10 +2,10 @@ import React, { ReactElement } from 'react';
 import tw from 'twin.macro';
 
 interface Props {
-  heading?: String;
+  heading?: string;
   headingSize?: 'big' | 'small';
   size?: 'big' | 'small';
-  className?: String;
+  className?: string;
   children: React.ReactNode;
 }
 

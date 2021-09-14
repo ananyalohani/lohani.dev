@@ -25,7 +25,7 @@ export const getAllPosts = () => {
     });
 };
 
-export const getSinglePost = async (slug: String) => {
+export const getSinglePost = async (slug: string) => {
   const source = getSourceOfFile(slug + '.mdx');
 
   // @ts-ignore

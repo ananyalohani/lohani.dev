@@ -1,10 +1,9 @@
 import React, { ReactElement, useState } from 'react';
+import Modal from '~/components/Modal';
 import PostLayout from '~/layouts/PostLayout';
 import { getAllPosts, getSinglePost } from '~/lib/mdx';
-import { PostMeta } from '~/types/blog';
-import Modal from '~/components/Modal';
 import ShareButtons from '~/sections/ShareButtons';
-import { useRouter } from 'next/router';
+import { PostMeta } from '~/types/blog';
 
 export const getStaticProps = async ({ params }: any) => {
   const post = await getSinglePost(params.slug);
@@ -22,7 +21,6 @@ export const getStaticPaths = async () => {
 };
 
 export default function BlogPost(meta: PostMeta): ReactElement {
-  const router = useRouter();
   const [open, setOpen] = useState<Boolean>(false);
 
   const onModalClose = () => {

@@ -1,14 +1,14 @@
-import React, { ReactElement } from 'react';
-import Layout from '~/layouts/Layout';
-import Container from '~/components/Container';
-import SocialIcon from '~/components/SocialIcon';
+import { format, formatISO } from 'date-fns';
 import { getMDXComponent } from 'mdx-bundler/client';
-import { format } from 'date-fns';
-import DecorativeRule from '~/components/DecorativeRule';
+import { NextSeo } from 'next-seo';
+import React, { ReactElement } from 'react';
 import { BiLink } from 'react-icons/bi';
 import { IoShareSocial } from 'react-icons/io5';
+import Container from '~/components/Container';
+import DecorativeRule from '~/components/DecorativeRule';
+import SocialIcon from '~/components/SocialIcon';
+import Layout from '~/layouts/Layout';
 import { PostMeta } from '~/types/blog';
-import { NextSeo } from 'next-seo';
 
 interface Props {
   meta: PostMeta;
@@ -30,6 +30,7 @@ export default function PostLayout({
     new Date(dateArr[0], dateArr[1] - 1, dateArr[2]),
     'do LLLL, yyyy'
   );
+  const dateISO = formatISO(new Date(dateArr[0], dateArr[1] - 1, dateArr[2]));
 
   const copyURL = () => {
     navigator.clipboard.writeText(`${url}/blog/${slug}`);
@@ -70,31 +71,37 @@ export default function PostLayout({
             <h1 className='mb-0 text-3xl font-extrabold text-gray-800 md:text-4xl'>
               {frontmatter.title}
             </h1>
-            <article className='mx-auto my-0 prose max-w-none'>
-              <div className='flex flex-row justify-between w-full'>
-                <div className='flex flex-row items-center space-x-1 sm:space-x-2'>
-                  <img
-                    src='/images/ananya.jpg'
-                    id='avatar'
-                    alt='Ananya Lohani'
-                  />
-                  <div className='text-xs text-gray-600 sm:text-sm'>
-                    Ananya Lohani
-                  </div>
-                  <div className='text-xs font-bold text-gray-600 sm:text-sm'>
-                    ·
-                  </div>
-                  <div className='text-xs text-gray-600 sm:text-sm'>{date}</div>
+            <header className='flex flex-row justify-between w-full'>
+              <div className='flex flex-row items-center space-x-1 sm:space-x-2'>
+                <img
+                  src='/images/ananya.jpg'
+                  alt='Ananya Lohani'
+                  className='w-8 my-5 mr-2.5 rounded-full'
+                />
+                <div className='text-xs text-gray-600 sm:text-sm'>
+                  Ananya Lohani
                 </div>
-                <div className='flex flex-row items-center spzce-x-2 sm:space-x-3'>
-                  <SocialIcon Icon={BiLink} onClick={copyURL} />
-                  <SocialIcon
-                    Icon={IoShareSocial}
-                    onClick={() => setModalOpen(true)}
-                  />
+                <div className='text-xs font-bold text-gray-600 sm:text-sm'>
+                  ·
                 </div>
+                <time
+                  className='text-xs text-gray-600 sm:text-sm'
+                  dateTime={dateISO}
+                >
+                  {date}
+                </time>
               </div>
-              <hr style={{ marginTop: 0 }} />
+              <div className='flex flex-row items-center spzce-x-2 sm:space-x-3'>
+                <SocialIcon Icon={BiLink} onClick={copyURL} label='Copy link' />
+                <SocialIcon
+                  Icon={IoShareSocial}
+                  onClick={() => setModalOpen(true)}
+                  label='Share on social media'
+                />
+              </div>
+            </header>
+            <hr className='mb-12' />
+            <article className='mx-auto my-0 prose max-w-none'>
               <img
                 src={frontmatter.image}
                 id='main-img'
