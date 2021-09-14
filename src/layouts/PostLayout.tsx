@@ -69,7 +69,7 @@ export default function PostLayout({
             size='big'
             className='px-6 py-8 bg-white sm:px-12 sm:py-16 lg:px-20 lg:py-16 rounded-2xl'
           >
-            <h1 className='mb-0 text-3xl font-extrabold text-gray-800 md:text-4xl'>
+            <h1 className='mb-0 text-3xl font-extrabold tracking-wide text-gray-800 md:text-4xl'>
               {frontmatter.title}
             </h1>
             <header className='flex flex-row justify-between w-full'>

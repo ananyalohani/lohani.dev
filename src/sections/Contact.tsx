@@ -55,10 +55,7 @@ export default function Contact(): ReactElement {
             >
               <div className='flex flex-col flex-1 space-y-3 sm:space-y-0 sm:space-x-3 sm:flex-row'>
                 <div className='flex-1'>
-                  <label
-                    className='text-xs font-medium uppercase sm:text-sm required'
-                    htmlFor='name'
-                  >
+                  <label className='required' htmlFor='name'>
                     Name
                   </label>
                   <input
@@ -73,10 +70,7 @@ export default function Contact(): ReactElement {
                   />
                 </div>
                 <div className='flex-1'>
-                  <label
-                    className='text-xs font-medium uppercase sm:text-sm required'
-                    htmlFor='email'
-                  >
+                  <label className='required' htmlFor='email'>
                     Email
                   </label>
                   <input
@@ -92,10 +86,7 @@ export default function Contact(): ReactElement {
                 </div>
               </div>
               <div>
-                <label
-                  className='text-xs font-medium uppercase sm:text-sm required'
-                  htmlFor='message'
-                >
+                <label className='required' htmlFor='message'>
                   Message
                 </label>
                 <textarea

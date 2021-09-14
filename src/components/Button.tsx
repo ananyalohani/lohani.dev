@@ -51,7 +51,7 @@ export default function Button({
       >
         {/* @ts-ignore */}
         {Icon && <Icon className='w-5 h-5' />}
-        <div className='text-sm font-semibold sm:text-base'>{text}</div>
+        <div className='text-sm font-semibold'>{text}</div>
       </a>
     </button>
   );
