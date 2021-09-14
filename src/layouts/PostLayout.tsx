@@ -9,6 +9,7 @@ import DecorativeRule from '~/components/DecorativeRule';
 import SocialIcon from '~/components/SocialIcon';
 import Layout from '~/layouts/Layout';
 import { PostMeta } from '~/types/blog';
+import ButtonTooltip from '~/components/ButtonTooltip';
 
 interface Props {
   meta: PostMeta;
@@ -92,12 +93,15 @@ export default function PostLayout({
                 </time>
               </div>
               <div className='flex flex-row items-center spzce-x-2 sm:space-x-3'>
-                <SocialIcon Icon={BiLink} onClick={copyURL} label='Copy link' />
-                <SocialIcon
-                  Icon={IoShareSocial}
-                  onClick={() => setModalOpen(true)}
-                  label='Share on social media'
-                />
+                <ButtonTooltip label='Copy link'>
+                  <SocialIcon Icon={BiLink} onClick={copyURL} />
+                </ButtonTooltip>
+                <ButtonTooltip label='Share to social media'>
+                  <SocialIcon
+                    Icon={IoShareSocial}
+                    onClick={() => setModalOpen(true)}
+                  />
+                </ButtonTooltip>
               </div>
             </header>
             <hr className='mb-12' />
