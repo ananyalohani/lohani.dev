@@ -24,7 +24,7 @@ export default function Layout({
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
         <meta name='description' content={description} />
       </Head> */}
-      {title && <NextSeo title={title} />}
+      {title && <NextSeo title={title} description={description} />}
       <div className='flex flex-col w-full min-h-screen'>
         <Header />
         <main className={`flex-1 ${className}`}>{children}</main>

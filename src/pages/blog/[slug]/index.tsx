@@ -8,7 +8,11 @@ import { PostMeta } from '~/types/blog';
 export const getStaticProps = async ({ params }: any) => {
   const post = await getSinglePost(params.slug);
   return {
-    props: { ...post, slug: params.slug, url: process.env.SITE_URL },
+    props: {
+      ...post,
+      slug: params.slug,
+      url: process.env.NEXT_PUBLIC_SITE_URL,
+    },
   };
 };
 

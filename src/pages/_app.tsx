@@ -4,6 +4,7 @@ import type { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const url = process.env.NEXT_PUBLIC_SITE_URL;
   return (
     <>
       <DefaultSeo
@@ -13,11 +14,17 @@ function MyApp({ Component, pageProps }: AppProps) {
         openGraph={{
           type: 'website',
           locale: 'en_IE',
-          url: process.env.SITE_URL,
+          url: url,
           site_name: 'Ananya Lohani',
           title: 'Ananya Lohani',
           description:
             'Ananya Lohani is a 3rd year undergrad student majoring in CSE at IIIT Delhi.',
+          images: [
+            {
+              url: `${url}/images/ananya-seo.png`,
+              alt: 'Ananya Lohani',
+            },
+          ],
         }}
         twitter={{
           handle: '@ananyalohani_',

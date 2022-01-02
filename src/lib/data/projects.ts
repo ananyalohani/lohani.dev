@@ -174,7 +174,7 @@ const projects: Project[] = [
       },
     ],
     image: '/images/projects/perceptris.png',
-    tags: ['Arduino', 'Processing', 'C', 'Rapid Prototyping'],
+    tags: ['Arduino', 'Processing', 'C++', 'Rapid Prototyping'],
   },
 ];
 
