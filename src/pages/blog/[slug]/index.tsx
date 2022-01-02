@@ -3,7 +3,7 @@ import Modal from '~/components/Modal';
 import PostLayout from '~/layouts/PostLayout';
 import { getAllPosts, getSinglePost } from '~/lib/mdx';
 import ShareButtons from '~/sections/ShareButtons';
-import { PostMeta } from '~/types/blog';
+import { Post } from '~/types/blog';
 
 export const getStaticProps = async ({ params }: any) => {
   const post = await getSinglePost(params.slug);
@@ -24,7 +24,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-export default function BlogPost(meta: PostMeta): ReactElement {
+export default function BlogPost(meta: Post): ReactElement {
   const [open, setOpen] = useState<Boolean>(false);
 
   const onModalClose = () => {
@@ -52,7 +52,7 @@ export default function BlogPost(meta: PostMeta): ReactElement {
           <p className='pb-4 text-lg text-gray-800'>
             Share this blog post to any of the following platforms:
           </p>
-          <ShareButtons url={meta.url} />
+          <ShareButtons url={meta.url!} />
         </Modal>
       )}
     </>

@@ -8,11 +8,11 @@ import Container from '~/components/Container';
 import DecorativeRule from '~/components/DecorativeRule';
 import SocialIcon from '~/components/SocialIcon';
 import Layout from '~/layouts/Layout';
-import { PostMeta } from '~/types/blog';
+import { Post } from '~/types/blog';
 import ButtonTooltip from '~/components/ButtonTooltip';
 
 interface Props {
-  meta: PostMeta;
+  meta: Post;
   setModalOpen: React.Dispatch<React.SetStateAction<Boolean>>;
 }
 
@@ -21,7 +21,7 @@ export default function PostLayout({
   setModalOpen,
 }: Props): ReactElement {
   const { code, slug, frontmatter, url } = meta;
-  const Component = React.useMemo(() => getMDXComponent(code), [code]);
+  const Component = React.useMemo(() => getMDXComponent(code!), [code]);
 
   const dateArr = frontmatter.publishedAt
     .split('-')
@@ -67,7 +67,7 @@ export default function PostLayout({
         <section className='z-10 mt-40 transform translate-z-0'>
           <Container
             size='big'
-            className='px-6 py-8 bg-white sm:px-12 sm:py-16 lg:px-20 lg:py-16 rounded-2xl'
+            className='p-8 bg-white sm:p-12 lg:p-14 rounded-2xl w-full sm:w-11/12'
           >
             <h1 className='mb-0 text-3xl font-extrabold tracking-wide text-gray-800 md:text-3xl'>
               {frontmatter.title}
