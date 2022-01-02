@@ -19,7 +19,7 @@ export default function Container({
   return (
     <div
       className={`mx-auto w-11/12 ${className}`}
-      css={[size === 'small' ? tw`max-w-3xl` : tw`max-w-4xl`]}
+      css={[size === 'small' ? tw`max-w-2xl` : tw`max-w-3xl`]}
     >
       {heading && (
         <h1

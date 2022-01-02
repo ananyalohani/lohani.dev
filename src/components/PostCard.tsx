@@ -15,7 +15,7 @@ export default function PostCard({ heading, blurb, link, image }: Props) {
         <a className='space-y-5 btn-link'>
           <img src={image} className='' alt={heading} />
           <div className='space-y-2'>
-            <h2 className='text-base leading-6 transition-all md:text-xl group-hover:text-sky-500'>
+            <h2 className='text-lg leading-6 transition-all md:text-lg group-hover:text-sky-500'>
               {heading}
             </h2>
             <p className='text-sm text-gray-700 truncate transition-all md:text-base overflow-ellipsis group-hover:text-sky-900'>
