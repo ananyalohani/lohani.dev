@@ -13,14 +13,17 @@ export default function About(): ReactElement {
             <p>
               I am a 3rd year undergrad student majoring in Computer Science and
               Engineering at{' '}
-              <a href='https://iiitd.ac.in'>
+              <a href='https://iiitd.ac.in' target='_blank' rel='noopener'>
                 Indraprastha Institute of Information Technology, Delhi
               </a>
               .
             </p>
             <p>
-              I love making fast, aesthetically pleasing websites. I’m
-              constantly learning new things!
+              I'm currently working at{' '}
+              <a href='https://tweek-labs.com' target='_blank' rel='noopener'>
+                Tweek Labs
+              </a>{' '}
+              as a Frontend Engineer.
             </p>
             <p>
               Welcome to my little space on the internet where I document my
@@ -28,8 +31,15 @@ export default function About(): ReactElement {
               tech world.
             </p>
             <p>
-              When I’m not coding, I paint. Check out my artworks on{' '}
-              <a href='https://instagram.com/lohani_art'>my art account</a>.
+              When I'm not coding, I paint. Check out{' '}
+              <a
+                href='https://instagram.com/lohani_art'
+                target='_blank'
+                rel='noopener'
+              >
+                my art account
+              </a>
+              .
             </p>
           </div>
           <img
