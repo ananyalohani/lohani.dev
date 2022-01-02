@@ -9,7 +9,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   const posts = getAllPosts(); // your fetch function here
 
   return {
-    props: { posts },
+    props: { posts: posts.slice(0, 3) },
   };
 };
 
