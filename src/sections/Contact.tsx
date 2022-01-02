@@ -60,6 +60,7 @@ export default function Contact(): ReactElement {
                     className='input'
                     name='name'
                     value={fields.name}
+                    id='name'
                     required
                     onChange={(e: any) => {
                       setFields({ ...fields, name: e.target.value });
@@ -75,6 +76,7 @@ export default function Contact(): ReactElement {
                     className='input'
                     name='email'
                     value={fields.email}
+                    id='email'
                     required
                     onChange={(e: any) => {
                       setFields({ ...fields, email: e.target.value });
@@ -90,6 +92,7 @@ export default function Contact(): ReactElement {
                   className='h-36 input'
                   name='message'
                   value={fields.message}
+                  id='message'
                   required
                   onChange={(e: any) => {
                     setFields({ ...fields, message: e.target.value });

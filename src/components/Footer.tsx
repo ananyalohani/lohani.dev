@@ -18,14 +18,8 @@ export default function Footer(): ReactElement {
     <footer className='border-t bg-sky-200 border-sky-300 bg-opacity-70'>
       <Container className='flex flex-row items-center justify-between py-5 text-sm text-gray-700 sm:text-base'>
         <div>
-          Built with{' '}
-          <Link href='https://nextjs.org'>
-            <a className='alt-link'>Next.js</a>
-          </Link>{' '}
-          and{' '}
-          <Link href='https://tailwindcss.com'>
-            <a className='alt-link'>Tailwind</a>
-          </Link>
+          Built with <Link href='https://nextjs.org'>Next.js</Link> and{' '}
+          <Link href='https://tailwindcss.com'>Tailwind</Link>
         </div>
         <div>&copy; Ananya Lohani 2021</div>
       </Container>
