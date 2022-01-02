@@ -30,7 +30,5 @@ Clone this repository and install [pnpm](https://pnpm.io/).
 
 ## Older Versions
 
-Older versions of my website are as follows:
-
 - [v2.lohani.dev](https://v2.lohani.dev) - [GitHub](https://github.com/ananyalohani/v2.lohani.dev) (Jan 2021)
 - [v1.lohani.dev](https://v1.lohani.dev) - [GitHub](https://github.com/ananyalohani/v1.lohani.dev) (October 2020)
