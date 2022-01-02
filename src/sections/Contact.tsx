@@ -49,10 +49,7 @@ export default function Contact(): ReactElement {
           </div>
           <div className='space-y-4'>
             <p>Alternately you can fill the contact form below:</p>
-            <form
-              onSubmit={submitForm}
-              className='flex flex-col max-w-2xl space-y-3'
-            >
+            <form onSubmit={submitForm} className='flex flex-col space-y-3'>
               <div className='flex flex-col flex-1 space-y-3 sm:space-y-0 sm:space-x-3 sm:flex-row'>
                 <div className='flex-1'>
                   <label className='required' htmlFor='name'>

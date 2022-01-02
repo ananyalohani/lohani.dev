@@ -2,31 +2,18 @@ import React from 'react';
 import Layout from '~/layouts/Layout';
 import Container from '~/components/Container';
 import ProjectCard from '~/components/ProjectCard';
+import projects from '~/lib/data/projects';
 
 export default function Projects() {
   return (
     <Layout title='Projects'>
       <section>
         <Container heading='Projects' className='my-16'>
-          <ProjectCard
-            title='Teams'
-            description='Awarded the opportunity to attend exclusive webinars and AMA sessions by Microsoft. Designed, constructed and deployed a fully-featured video calling platform.'
-            mainLink='https://msft.lohani.dev'
-            image='/images/blog/msft-teams-homepage.png'
-            links={[
-              { type: 'website', link: 'https://msft.lohani.dev' },
-              { type: 'github', link: 'https://github.com/ananyalohani/teams' },
-              { type: 'youtube', link: 'https://youtube.com' },
-            ]}
-            tags={[
-              'Next.js',
-              'React',
-              'TailwindCSS',
-              'MongoDB',
-              'Express',
-              'NodeJS',
-            ]}
-          />
+          <div className='space-y-6'>
+            {projects.map((project, idx) => (
+              <ProjectCard project={project} key={idx} />
+            ))}
+          </div>
         </Container>
       </section>
     </Layout>

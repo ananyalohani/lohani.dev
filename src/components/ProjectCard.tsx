@@ -1,31 +1,23 @@
 import React from 'react';
-import Link from 'next/link';
 import { MdOutlineWebAsset } from 'react-icons/md';
-import { AiFillGithub } from 'react-icons/ai';
+import {
+  FaBehanceSquare,
+  FaGithub,
+  FaLink,
+  FaYoutube,
+  FaFigma,
+} from 'react-icons/fa';
+import { Project } from '~/lib/data/projects';
 
 interface Props {
-  title: string;
-  mainLink: string;
-  links: {
-    type: 'website' | 'github' | 'behance' | 'youtube';
-    link: string;
-  }[];
-  description: string;
-  image: string;
-  tags: string[];
+  project: Project;
 }
 
-export default function ProjectCard({
-  mainLink,
-  title,
-  links,
-  description,
-  image,
-  tags,
-}: Props) {
+export default function ProjectCard({ project }: Props) {
+  const { title, links, description, image, tags } = project;
+
   return (
     <div className='transition-all bg-gray-50 p-4 sm:p-6 border-2 border-gray-200 rounded-lg w-full '>
-      {/* <Link href={mainLink}> */}
       <a className='flex flex-col-reverse sm:flex-row sm:space-x-3 btn-link'>
         <div className='flex flex-col space-y-2'>
           <div className='flex flex-row items-center'>
@@ -33,20 +25,23 @@ export default function ProjectCard({
               {title}
             </h2>
             <div className='ml-3 flex flex-row space-x-2 items-center'>
-              {links.map((item) => {
-                if (item.type === 'website')
-                  return (
-                    <a href={item.link} target='_blank' rel='noopener'>
-                      <MdOutlineWebAsset className='h-7 w-7 text-gray-700 hover:text-sky-500' />
-                    </a>
-                  );
-                if (item.type === 'github')
-                  return (
-                    <a href={item.link} target='_blank' rel='noopener'>
-                      <AiFillGithub className='h-6 w-6 text-gray-700 hover:text-sky-500' />
-                    </a>
-                  );
-              })}
+              {links.map((item) => (
+                <a href={item.link} target='_blank' rel='noopener'>
+                  {item.type === 'website' ? (
+                    <MdOutlineWebAsset className='h-7 w-7 text-gray-700 hover:text-sky-500' />
+                  ) : item.type === 'github' ? (
+                    <FaGithub className='h-6 w-6 text-gray-700 hover:text-sky-500' />
+                  ) : item.type === 'behance' ? (
+                    <FaBehanceSquare className='h-6 w-6 text-gray-700 hover:text-sky-500' />
+                  ) : item.type === 'youtube' ? (
+                    <FaYoutube className='h-6 w-6 text-gray-700 hover:text-sky-500' />
+                  ) : item.type === 'figma' ? (
+                    <FaFigma className='h-5 w-5 text-gray-700 hover:text-sky-500' />
+                  ) : (
+                    <FaLink className='h-6 w-6 text-gray-700 hover:text-sky-500' />
+                  )}
+                </a>
+              ))}
             </div>
           </div>
           <p className='text-sm text-gray-700 transition-all md:text-base'>
@@ -66,7 +61,6 @@ export default function ProjectCard({
           alt={title}
         />
       </a>
-      {/* </Link> */}
     </div>
   );
 }
