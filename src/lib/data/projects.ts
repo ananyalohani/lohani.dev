@@ -65,7 +65,7 @@ const projects: Project[] = [
         link: 'https://github.com/ecstacy-fcs/client',
       },
     ],
-    image: '/images/projects/ecstacy.png',
+    image: '/images/projects/ecstacy.jpeg',
     tags: [
       'Next.js',
       'React',
