@@ -13,7 +13,7 @@ export default function PostCard({ heading, blurb, link, image }: Props) {
     <div className='transition-all cursor-pointer group bg-gray-50 p-4 border-2 border-gray-200 rounded-lg w-full hover:bg-sky-50 hover:border-sky-200'>
       <Link href={link}>
         <a className='space-y-5 btn-link'>
-          <img src={image} className='' alt={heading} />
+          <img src={image} className='rounded' alt={heading} />
           <div className='space-y-2'>
             <h2 className='text-lg leading-6 transition-all md:text-lg group-hover:text-sky-500'>
               {heading}
