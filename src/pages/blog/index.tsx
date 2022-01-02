@@ -18,15 +18,17 @@ export default function Blog({ posts }: any) {
     <Layout title='Blog'>
       <section>
         <Container heading='Blog' className='my-16'>
-          {posts.map((post: any, key: any) => (
-            <PostCard
-              heading={post.frontmatter.title}
-              blurb={post.frontmatter.description}
-              key={key}
-              link={`blog/${post.slug}`}
-              image={post.frontmatter.image}
-            />
-          ))}
+          <div className='grid grid-cols-1 sm:grid-cols-2 gap-5'>
+            {posts.map((post: any, key: any) => (
+              <PostCard
+                heading={post.frontmatter.title}
+                blurb={post.frontmatter.description}
+                key={key}
+                link={`blog/${post.slug}`}
+                image={post.frontmatter.image}
+              />
+            ))}
+          </div>
         </Container>
       </section>
     </Layout>

@@ -91,7 +91,7 @@ const projects: Project[] = [
       },
     ],
     image: '/images/projects/tiiime.png',
-    tags: ['Figma', 'Miro', 'Excalidraw'],
+    tags: ['Figma', 'Miro', 'Excalidraw', 'UI/UX', 'Prototyping'],
   },
   {
     title: 'Mausam',
@@ -174,7 +174,7 @@ const projects: Project[] = [
       },
     ],
     image: '/images/projects/perceptris.png',
-    tags: ['Arduino', 'Processing', 'C'],
+    tags: ['Arduino', 'Processing', 'C', 'Rapid Prototyping'],
   },
 ];
 
