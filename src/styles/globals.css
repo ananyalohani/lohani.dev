@@ -13,7 +13,7 @@ a:not(.btn-link) {
 }
 
 a.alt-link {
-  @apply font-semibold text-gray-700 no-underline transition-all ease-in-out hover:text-gray-800;
+  @apply font-semibold no-underline transition-all ease-in-out text-slate-700 hover:text-slate-800;
 }
 
 body {
@@ -27,7 +27,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-bold text-gray-700 font-display;
+  @apply font-bold text-slate-700 font-display;
 }
 
 header h1,
@@ -36,7 +36,7 @@ header h2 {
 }
 
 p {
-  @apply text-sm text-gray-900 sm:text-base;
+  @apply text-sm text-slate-900 sm:text-base;
 }
 
 #polywork #color {
@@ -79,16 +79,16 @@ form label.required::after {
 }
 
 form label {
-  @apply block text-xs font-semibold text-gray-700 uppercase font-display sm:text-sm;
+  @apply block text-xs font-semibold uppercase text-slate-700 font-display sm:text-sm;
 }
 
 form .input {
-  @apply block w-full mt-1 text-sm text-gray-800 border-gray-300 rounded-md shadow-sm focus:border-sky-300 focus:ring focus:ring-sky-200 focus:ring-opacity-50;
+  @apply block w-full mt-1 text-sm rounded-md shadow-sm text-slate-800 border-slate-300 focus:border-sky-300 focus:ring focus:ring-sky-200 focus:ring-opacity-50;
 }
 
 code {
   font-family: 'Fira Code', monospace !important;
-  @apply py-0.5 px-1 bg-gray-100 border border-gray-200 rounded-md font-medium text-pink-600;
+  @apply py-0.5 px-1 bg-slate-100 border border-slate-200 rounded-md font-medium text-pink-600;
 }
 
 .prose p {
@@ -101,5 +101,5 @@ code {
 
 .prose blockquote p,
 .prose blockquote li {
-  @apply text-coolGray-500 normal-case font-medium not-italic !important;
+  @apply text-gray-500 normal-case font-medium not-italic !important;
 }

@@ -21,7 +21,7 @@ export default function Modal({
   return (
     <div
       css={[
-        tw`fixed top-0 left-0 z-30 flex w-screen h-full min-h-screen m-0 transition-all duration-500 bg-gray-700 bg-opacity-75 backdrop-filter backdrop-blur-sm`,
+        tw`fixed top-0 left-0 z-30 flex w-screen h-full min-h-screen m-0 transition-all duration-500 bg-opacity-75 bg-slate-700 backdrop-blur-sm`,
         open ? tw`block` : tw`hidden`,
       ]}
     >

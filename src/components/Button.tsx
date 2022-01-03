@@ -23,7 +23,7 @@ export default function Button({
 }: Props): ReactElement {
   return (
     <button
-      className={`py-2 px-3 transition-all ease-out border border-gray-300 rounded-md cursor-pointer bg-gray-50 text-gray-700 group ${className}`}
+      className={`py-2 px-3 transition-all ease-out border border-slate-300 rounded-md cursor-pointer bg-slate-50 text-slate-700 group ${className}`}
       id={id}
       css={[
         color === 'blue'

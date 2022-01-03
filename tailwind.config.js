@@ -1,9 +1,7 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
-  mode: 'jit',
-  purge: ['./src/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       maxWidth: {
@@ -17,32 +15,26 @@ module.exports = {
         120: '34rem',
       },
       colors: {
-        sky: colors.sky,
-        gray: colors.blueGray,
-        coolGray: colors.coolGray,
-        teal: colors.teal,
-        emerald: colors.emerald,
-        green: colors.green,
-        orange: colors.orange,
+        ...colors,
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
             margin: '5rem 0',
             h1: {
-              color: theme('colors.coolGray.800'),
+              color: theme('colors.gray.800'),
             },
             h2: {
-              color: theme('colors.coolGray.800'),
+              color: theme('colors.gray.800'),
             },
             h3: {
-              color: theme('colors.coolGray.800'),
+              color: theme('colors.gray.800'),
             },
             h4: {
-              color: theme('colors.coolGray.800'),
+              color: theme('colors.gray.800'),
             },
             p: {
-              color: theme('colors.coolGray.800'),
+              color: theme('colors.gray.800'),
             },
             blockquote: {
               'p:first-of-type::before': {
@@ -51,7 +43,7 @@ module.exports = {
               'p:last-of-type::after': {
                 content: '"" !important',
               },
-              color: theme('colors.gray.700'),
+              color: theme('colors.slate.700'),
             },
             code: {
               '&::before': {

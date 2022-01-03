@@ -24,7 +24,7 @@ const SocialIcon = ({ name, Icon, className, onClick }: Props) => {
           ? tw`text-green-500`
           : name === 'Reddit'
           ? tw`text-orange-600`
-          : tw`text-gray-600`,
+          : tw`text-slate-600`,
       ]}
     >
       <Icon

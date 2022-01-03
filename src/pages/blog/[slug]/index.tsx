@@ -46,10 +46,10 @@ export default function BlogPost(meta: Post): ReactElement {
           onClose={onModalClose}
           onOpen={onModalOpen}
         >
-          <h1 className='w-full pb-2 text-3xl text-center text-gray-800 border-b border-gray-300'>
+          <h1 className='w-full pb-2 text-3xl text-center text-slate-800 border-b border-slate-300'>
             Share this Post!
           </h1>
-          <p className='pb-4 text-lg text-gray-800'>
+          <p className='pb-4 text-lg text-slate-800'>
             Share this blog post to any of the following platforms:
           </p>
           <ShareButtons url={meta.url!} />
