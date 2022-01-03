@@ -10,7 +10,7 @@ export default function Contact(): ReactElement {
   const submitForm = (e: any) => {
     e.preventDefault();
     console.log(fields);
-    fetch('https://formspree.io/f/xwkwyvar', {
+    fetch('https://formspree.io/f/xjvlkeqg', {
       method: 'POST',
       body: JSON.stringify(fields),
       headers: { 'Content-Type': 'application/json' },
