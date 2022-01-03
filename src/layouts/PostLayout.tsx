@@ -64,10 +64,10 @@ export default function PostLayout({
       />
 
       <Layout title={frontmatter.title} description={frontmatter.description}>
-        <section className='z-10 mt-40  translate-z-0'>
+        <section className='relative top-40'>
           <Container
             size='big'
-            className='p-8 bg-white sm:p-12 lg:p-14 rounded-2xl w-full sm:w-11/12'
+            className='z-10 w-full p-8 bg-white sm:p-12 lg:p-14 rounded-2xl sm:w-11/12'
           >
             <h1 className='mb-0 text-3xl font-extrabold tracking-wide text-slate-800 md:text-3xl'>
               {frontmatter.title}

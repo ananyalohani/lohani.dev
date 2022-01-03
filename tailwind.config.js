@@ -4,6 +4,9 @@ module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      zIndex: {
+        neg: -10,
+      },
       maxWidth: {
         '1/4': '25%',
         '1/2': '50%',

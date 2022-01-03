@@ -22,7 +22,7 @@ export default function Header(): ReactElement {
       css={[
         tw`border-b bg-sky-200 bg-opacity-70 border-sky-300`,
         isBlog
-          ? tw`absolute top-0 left-0 right-0 z-0 text-sky-300`
+          ? tw`absolute top-0 left-0 right-0 text-sky-300`
           : tw`sticky top-0 z-10 backdrop-blur-lg`,
       ]}
       style={{
