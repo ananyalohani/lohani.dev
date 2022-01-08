@@ -33,7 +33,7 @@ export default function Contact(): ReactElement {
               <a href='mailto:work@lohani.dev'>work@lohani.dev</a>.
             </p>
             <p>You can also connect with me on the following platforms:</p>
-            <div className='flex flex-wrap gap-3 md:gap-3'>
+            <div className='flex flex-wrap gap-3'>
               {socials.map((social, key) => (
                 <Button
                   text={social.text}

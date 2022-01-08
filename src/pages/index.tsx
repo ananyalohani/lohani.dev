@@ -1,11 +1,11 @@
-import Layout from '~/layouts/Layout';
-import About from '~/sections/About';
-import RecentPosts from '~/sections/RecentPosts';
-import Contact from '~/sections/Contact';
 import { GetStaticProps } from 'next';
+import Layout from '~/layouts/Layout';
 import { getAllPosts } from '~/lib/mdx';
-import projects from '~/lib/data/projects';
+import About from '~/sections/About';
+import Contact from '~/sections/Contact';
+import RecentPosts from '~/sections/RecentPosts';
 import RecentProjects from '~/sections/RecentProjects';
+import Skills from '~/sections/Skills';
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const posts = getAllPosts(); // your fetch function here
@@ -20,7 +20,8 @@ export default function Home({ posts }: any) {
     <Layout>
       <About />
       <RecentPosts posts={posts} />
-      <RecentProjects projects={projects.slice(0, 2)} />
+      <RecentProjects />
+      <Skills />
       <Contact />
     </Layout>
   );
