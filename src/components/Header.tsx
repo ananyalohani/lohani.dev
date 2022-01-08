@@ -22,8 +22,8 @@ export default function Header(): ReactElement {
       css={[
         tw`border-b bg-sky-200 bg-opacity-70 border-sky-300`,
         isBlog
-          ? tw`absolute top-0 left-0 right-0 z-0 text-sky-300`
-          : tw`sticky top-0 z-10 backdrop-filter backdrop-blur-lg`,
+          ? tw`absolute top-0 left-0 right-0 text-sky-300`
+          : tw`sticky top-0 z-10 backdrop-blur-lg`,
       ]}
       style={{
         height: isBlog ? '60vh' : 'auto',
@@ -39,7 +39,7 @@ export default function Header(): ReactElement {
         <nav className='flex flex-row space-x-3 text-base sm:text-lg sm:space-x-5'>
           {navigation.map((nav, key) => (
             <h2
-              className='text-gray-700 transition-all ease-out hover:text-sky-500'
+              className='transition-all ease-out text-slate-700 hover:text-sky-500'
               css={[router.asPath === nav.path && tw`text-sky-700`]}
               key={key}
             >

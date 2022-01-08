@@ -64,12 +64,12 @@ export default function PostLayout({
       />
 
       <Layout title={frontmatter.title} description={frontmatter.description}>
-        <section className='z-10 mt-40 transform translate-z-0'>
+        <section className='relative top-40'>
           <Container
             size='big'
-            className='p-8 bg-white sm:p-12 lg:p-14 rounded-2xl w-full sm:w-11/12'
+            className='z-10 w-full p-8 bg-white sm:p-12 lg:p-14 rounded-2xl sm:w-11/12'
           >
-            <h1 className='mb-0 text-3xl font-extrabold tracking-wide text-gray-800 md:text-3xl'>
+            <h1 className='mb-0 text-3xl font-extrabold tracking-wide text-slate-800 md:text-3xl'>
               {frontmatter.title}
             </h1>
             <header className='flex flex-row justify-between w-full'>
@@ -79,14 +79,14 @@ export default function PostLayout({
                   alt='Ananya Lohani'
                   className='w-8 my-5 mr-2.5 rounded-full'
                 />
-                <div className='text-xs text-gray-600 sm:text-sm'>
+                <div className='text-xs text-slate-600 sm:text-sm'>
                   Ananya Lohani
                 </div>
-                <div className='text-xs font-bold text-gray-600 sm:text-sm'>
+                <div className='text-xs font-bold text-slate-600 sm:text-sm'>
                   ·
                 </div>
                 <time
-                  className='text-xs text-gray-600 sm:text-sm'
+                  className='text-xs text-slate-600 sm:text-sm'
                   dateTime={dateISO}
                 >
                   {date}

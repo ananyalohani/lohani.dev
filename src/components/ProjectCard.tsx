@@ -68,7 +68,7 @@ export default function ProjectCard({ project, size = 'big' }: Props) {
               ))}
             </div>
           </div>
-          <p className='text-sm text-gray-700 transition-all md:text-base'>
+          <p className='text-sm transition-all text-slate-700 md:text-base'>
             {description}
           </p>
           <div
@@ -88,7 +88,7 @@ export default function ProjectCard({ project, size = 'big' }: Props) {
           css={[tw`mb-5 rounded`, size === 'big' && tw`sm:max-w-xs sm:mb-0`]}
           alt={title}
         />
-      </a>
+      </div>
     </div>
   );
 }
