@@ -5,19 +5,19 @@ import socials from '~/lib/data/socials';
 import Link from 'next/link';
 
 export default function Contact(): ReactElement {
-  const [fields, setFields] = useState({ name: '', email: '', message: '' });
+  // const [fields, setFields] = useState({ name: '', email: '', message: '' });
 
-  const submitForm = (e: any) => {
-    e.preventDefault();
-    console.log(fields);
-    fetch('https://formspree.io/f/xjvlkeqg', {
-      method: 'POST',
-      body: JSON.stringify(fields),
-      headers: { 'Content-Type': 'application/json' },
-    }).then(() => {
-      setFields({ name: '', email: '', message: '' });
-    });
-  };
+  // const submitForm = (e: any) => {
+  //   e.preventDefault();
+  //   console.log(fields);
+  //   fetch('https://formspree.io/f/xjvlkeqg', {
+  //     method: 'POST',
+  //     body: JSON.stringify(fields),
+  //     headers: { 'Content-Type': 'application/json' },
+  //   }).then(() => {
+  //     setFields({ name: '', email: '', message: '' });
+  //   });
+  // };
 
   return (
     <section id='contact'>
@@ -47,7 +47,7 @@ export default function Contact(): ReactElement {
               ))}
             </div>
           </div>
-          <div className='space-y-4'>
+          {/* <div className='space-y-4'>
             <p>Alternately you can fill the contact form below:</p>
             <form onSubmit={submitForm} className='flex flex-col space-y-3'>
               <div className='flex flex-col flex-1 space-y-3 sm:space-y-0 sm:space-x-3 sm:flex-row'>
@@ -101,7 +101,7 @@ export default function Contact(): ReactElement {
               </div>
               <Button text='Send' type='submit' className='w-min' />
             </form>
-          </div>
+          </div> */}
         </div>
       </Container>
     </section>

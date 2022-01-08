@@ -8,37 +8,61 @@ import {
   FaFigma,
 } from 'react-icons/fa';
 import { Project } from '~/lib/data/projects';
+import tw from 'twin.macro';
 
 interface Props {
   project: Project;
+  size?: 'small' | 'big';
 }
 
-export default function ProjectCard({ project }: Props) {
+export default function ProjectCard({ project, size = 'big' }: Props) {
   const { title, links, description, image, tags } = project;
 
   return (
-    <div className='transition-all bg-gray-50 p-4 sm:p-6 border-2 border-gray-200 rounded-lg w-full '>
-      <a className='flex flex-col-reverse sm:flex-row sm:space-x-3 btn-link'>
+    <div
+      css={[
+        tw`w-full transition-all border-2 border-gray-200 rounded-lg bg-gray-50`,
+        size === 'big' ? tw`p-4 sm:p-6` : tw`p-4`,
+      ]}
+    >
+      <a
+        className='btn-link'
+        css={[
+          tw`flex flex-col-reverse`,
+          size === 'big' && tw`sm:flex-row sm:space-x-3`,
+        ]}
+      >
         <div className='flex flex-col space-y-2'>
           <div className='flex flex-row items-center'>
-            <h2 className='text-xl leading-6 transition-all md:text-2xl'>
+            <h2
+              className='text-xl leading-6 transition-all md:text-2xl'
+              css={[
+                tw`text-xl leading-6 transition-all`,
+                size === 'small' ? tw`md:text-xl` : tw`md:text-2xl`,
+              ]}
+            >
               {title}
             </h2>
-            <div className='ml-3 flex flex-row space-x-2 items-center'>
+            <div className='flex flex-row items-center ml-3 space-x-2'>
               {links.map((item) => (
-                <a href={item.link} target='_blank' rel='noopener'>
+                <a
+                  href={item.link}
+                  target='_blank'
+                  rel='noopener'
+                  className='text-gray-700 hover:text-sky-500 btn-link'
+                >
                   {item.type === 'website' ? (
-                    <MdOutlineWebAsset className='h-7 w-7 text-gray-700 hover:text-sky-500' />
+                    <MdOutlineWebAsset className=' h-7 w-7' />
                   ) : item.type === 'github' ? (
-                    <FaGithub className='h-6 w-6 text-gray-700 hover:text-sky-500' />
+                    <FaGithub className='w-6 h-6' />
                   ) : item.type === 'behance' ? (
-                    <FaBehanceSquare className='h-6 w-6 text-gray-700 hover:text-sky-500' />
+                    <FaBehanceSquare className='w-6 h-6' />
                   ) : item.type === 'youtube' ? (
-                    <FaYoutube className='h-6 w-6 text-gray-700 hover:text-sky-500' />
+                    <FaYoutube className='w-6 h-6' />
                   ) : item.type === 'figma' ? (
-                    <FaFigma className='h-5 w-5 text-gray-700 hover:text-sky-500' />
+                    <FaFigma className='w-5 h-5' />
                   ) : (
-                    <FaLink className='h-6 w-6 text-gray-700 hover:text-sky-500' />
+                    <FaLink className='w-6 h-6' />
                   )}
                 </a>
               ))}
@@ -47,9 +71,13 @@ export default function ProjectCard({ project }: Props) {
           <p className='text-sm text-gray-700 transition-all md:text-base'>
             {description}
           </p>
-          <div className='flex flex-row flex-wrap gap-2'>
+          <div
+            css={[
+              size === 'big' ? tw`flex flex-row flex-wrap gap-2` : tw`hidden`,
+            ]}
+          >
             {tags.map((tag) => (
-              <div className='text-xs bg-sky-100 text-sky-500 py-1 px-2 border border-sky-200 md:text-sm rounded'>
+              <div className='px-2 py-1 text-xs border rounded bg-sky-100 text-sky-500 border-sky-200 md:text-sm'>
                 {tag}
               </div>
             ))}
@@ -57,7 +85,7 @@ export default function ProjectCard({ project }: Props) {
         </div>
         <img
           src={image}
-          className='sm:max-w-xs rounded mb-3 sm:mb-0'
+          css={[tw`mb-5 rounded`, size === 'big' && tw`sm:max-w-xs sm:mb-0`]}
           alt={title}
         />
       </a>
