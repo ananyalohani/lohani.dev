@@ -9,10 +9,10 @@ datasource db {
 }
 
 model PostMeta {
-  id        string   @id @default(dbgenerated()) @map("_id") @db.ObjectId
-  title     string
+  id        String   @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  title     String
   createdAt DateTime @default(now())
-  slug      string   @unique
+  slug      String   @unique
   likes     Int      @default(1)
   views     Int      @default(0)
 }
