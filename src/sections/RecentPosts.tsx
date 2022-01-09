@@ -5,7 +5,11 @@ import PostCard from '~/components/PostCard';
 import Link from 'next/link';
 import { Post } from '~/types/blog';
 
-export default function RecentPosts({ posts }: any): ReactElement {
+interface Props {
+  posts: Post[];
+}
+
+export default function RecentPosts({ posts }: Props): ReactElement {
   return (
     <section id='recent-posts'>
       <Container
@@ -19,21 +23,17 @@ export default function RecentPosts({ posts }: any): ReactElement {
             technologies.
           </p>
           <div className='grid grid-cols-1 gap-5 sm:grid-cols-2'>
-            {posts.map((post: Post, key: number) => (
+            {posts.map((post, key) => (
               <PostCard
                 heading={post.frontmatter.title}
                 blurb={post.frontmatter.description}
                 key={key}
-                link={`blog/${post.slug}`}
+                link={`/blog/${post.slug}`}
                 image={post.frontmatter.image!}
               />
             ))}
           </div>
-          <Link href='/blog'>
-            <a className='self-end btn-link'>
-              <Button text='View All' />
-            </a>
-          </Link>
+          <Button text='View All' className='self-end' link='/blog' />
         </div>
       </Container>
     </section>

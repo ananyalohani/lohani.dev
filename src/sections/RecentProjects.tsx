@@ -20,15 +20,11 @@ export default function RecentProjects(): ReactElement {
             them!
           </p>
           <div className='grid grid-cols-1 gap-5 sm:grid-cols-2'>
-            {projects.slice(0, 2).map((project: Project, key: number) => (
+            {projects.slice(0, 2).map((project: Project, key) => (
               <ProjectCard project={project} key={key} size='small' />
             ))}
           </div>
-          <Link href='/projects'>
-            <a className='self-end btn-link'>
-              <Button text='View All' />
-            </a>
-          </Link>
+          <Button text='View All' link='/projects' className='self-end' />
         </div>
       </Container>
     </section>

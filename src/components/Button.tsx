@@ -9,7 +9,7 @@ interface Props {
   color?: string;
   link?: string;
   id?: string;
-  type?: string;
+  type?: 'button' | 'submit' | 'reset';
 }
 
 export default function Button({
@@ -19,8 +19,10 @@ export default function Button({
   color,
   id,
   link,
-  type,
+  type = 'button',
 }: Props): ReactElement {
+  const newTab = !link?.startsWith('/');
+
   return (
     <button
       className={`py-2 px-3 transition-all ease-out border border-gray-300 rounded-md cursor-pointer bg-gray-50 text-gray-700 group ${className}`}
@@ -40,8 +42,7 @@ export default function Button({
           ? tw`hover:bg-teal-50 hover:border-teal-500 hover:text-teal-500 hover:border-opacity-30`
           : tw`hover:bg-sky-50 hover:border-sky-200 hover:text-sky-500`,
       ]}
-      // @ts-ignore
-      type={type ? type : 'button'}
+      type={type}
     >
       <a
         href={link}

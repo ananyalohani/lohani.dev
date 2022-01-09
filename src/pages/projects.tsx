@@ -10,8 +10,8 @@ export default function Projects() {
       <section>
         <Container heading='Projects' className='my-16'>
           <div className='space-y-6'>
-            {projects.map((project, idx) => (
-              <ProjectCard project={project} key={idx} />
+            {projects.map((project, key) => (
+              <ProjectCard project={project} key={key} />
             ))}
           </div>
         </Container>

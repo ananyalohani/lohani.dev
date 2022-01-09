@@ -44,9 +44,10 @@ export default function ProjectCard({ project, size = 'big' }: Props) {
               {title}
             </h2>
             <div className='flex flex-row items-center ml-3 space-x-2'>
-              {links.map((item) => (
+              {links.map((item, key) => (
                 <a
                   href={item.link}
+                  key={key}
                   target='_blank'
                   rel='noopener'
                   className='text-gray-700 hover:text-sky-500 btn-link'
@@ -76,8 +77,11 @@ export default function ProjectCard({ project, size = 'big' }: Props) {
               size === 'big' ? tw`flex flex-row flex-wrap gap-2` : tw`hidden`,
             ]}
           >
-            {tags.map((tag) => (
-              <div className='px-2 py-1 text-xs border rounded bg-sky-100 text-sky-500 border-sky-200 md:text-sm'>
+            {tags.map((tag, key) => (
+              <div
+                key={key}
+                className='px-2 py-1 text-xs border rounded bg-sky-100 text-sky-500 border-sky-200 md:text-sm'
+              >
                 {tag}
               </div>
             ))}
