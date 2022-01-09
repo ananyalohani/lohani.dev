@@ -85,6 +85,10 @@ const projects: Project[] = [
         type: 'website',
         link: 'https://byld-iiitd.netlify.app',
       },
+      {
+        type: 'github',
+        link: 'https://github.com/IIIT-Delhi/byld.iiitd.edu.in',
+      },
     ],
     image: '/images/projects/byld-iiitd.png',
     tags: ['Svelte', 'SvelteKit', 'TypeScript', 'TailwindCSS'],
