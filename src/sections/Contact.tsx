@@ -36,14 +36,17 @@ export default function Contact(): ReactElement {
             <div className='flex flex-wrap gap-3'>
               {socials.map((social, key) => (
                 <Button
-                  text={social.text}
-                  className=''
-                  Icon={social.icon}
+                  // text={social.text}
+                  className='flex flex-row'
+                  // Icon={social.icon}
                   color={social.color}
                   link={social.link}
                   id={social.text === 'Polywork' ? 'polywork' : ''}
                   key={key}
-                />
+                >
+                  <social.icon className='w-5 h-5' />
+                  <span className=''>{social.text}</span>
+                </Button>
               ))}
             </div>
           </div>

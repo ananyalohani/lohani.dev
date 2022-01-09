@@ -1,31 +1,34 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import tw from 'twin.macro';
 import { IconType } from 'react-icons/lib';
+import Link from 'next/link';
 
 interface Props {
-  text: string;
-  Icon?: IconType | ReactElement;
+  // text: string;
+  // Icon?: IconType | React.ReactElement;
   className?: string;
   color?: string;
   link?: string;
   id?: string;
   type?: 'button' | 'submit' | 'reset';
+  children: React.ReactNode;
 }
 
 export default function Button({
-  text,
-  Icon,
+  // text,
+  // Icon,
   className,
   color,
   id,
   link,
   type = 'button',
-}: Props): ReactElement {
+  children,
+}: Props): React.ReactElement {
   const newTab = !link?.startsWith('/');
 
   return (
     <button
-      className={`py-2 px-3 transition-all ease-out border border-gray-300 rounded-md cursor-pointer bg-gray-50 text-gray-700 group ${className}`}
+      className={`py-2 px-3 transition-all ease-out border border-gray-300 rounded-md cursor-pointer bg-gray-50 text-gray-700 group text-sm font-semibold ${className}`}
       id={id}
       css={[
         color === 'blue'
@@ -44,16 +47,19 @@ export default function Button({
       ]}
       type={type}
     >
-      <a
-        href={link}
-        target='_blank'
-        className='flex flex-row items-center space-x-3 btn-link'
-        rel='noopener'
-      >
-        {/* @ts-ignore */}
-        {Icon && <Icon className='w-5 h-5' />}
-        <div className='text-sm font-semibold'>{text}</div>
-      </a>
+      {link ? (
+        <Link href={link}>
+          <a
+            target={newTab ? '_blank' : ''}
+            className='flex flex-row items-center space-x-3 btn-link'
+            rel='noopener'
+          >
+            {children}
+          </a>
+        </Link>
+      ) : (
+        <>{children}</>
+      )}
     </button>
   );
 }

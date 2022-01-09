@@ -33,7 +33,9 @@ export default function RecentPosts({ posts }: Props): ReactElement {
               />
             ))}
           </div>
-          <Button text='View All' className='self-end' link='/blog' />
+          <Button className='self-end' link='/blog'>
+            View All
+          </Button>
         </div>
       </Container>
     </section>

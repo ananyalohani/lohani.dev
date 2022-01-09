@@ -25,7 +25,7 @@ export default function ProjectCard({ project, size = 'big' }: Props) {
         size === 'big' ? tw`p-4 sm:p-6` : tw`p-4`,
       ]}
     >
-      <a
+      <div
         className='btn-link'
         css={[
           tw`flex flex-col-reverse`,
@@ -92,7 +92,7 @@ export default function ProjectCard({ project, size = 'big' }: Props) {
           css={[tw`mb-5 rounded`, size === 'big' && tw`sm:max-w-xs sm:mb-0`]}
           alt={title}
         />
-      </a>
+      </div>
     </div>
   );
 }

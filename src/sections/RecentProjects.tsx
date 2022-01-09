@@ -24,7 +24,9 @@ export default function RecentProjects(): ReactElement {
               <ProjectCard project={project} key={key} size='small' />
             ))}
           </div>
-          <Button text='View All' link='/projects' className='self-end' />
+          <Button link='/projects' className='self-end'>
+            View All
+          </Button>
         </div>
       </Container>
     </section>
