@@ -10,7 +10,7 @@ interface Props {
 
 export default function PostCard({ heading, blurb, link, image }: Props) {
   return (
-    <div className='w-full p-4 transition-all border-2 rounded-lg cursor-pointer group bg-slate-50 border-slate-200 hover:bg-sky-50 hover:border-sky-200'>
+    <div className='w-full p-4 transition-all border-2 border-gray-200 rounded-lg cursor-pointer group bg-gray-50 hover:bg-sky-50 hover:border-sky-200'>
       <Link href={link}>
         <a className='space-y-5 btn-link'>
           <img src={image} className='rounded' alt={heading} />
