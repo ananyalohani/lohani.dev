@@ -16,7 +16,7 @@ export default function Skills(): ReactElement {
             foundation in computer science and web development. Here are some
             technologies I'm familiar with:
           </p>
-          <ul className='grid grid-cols-4 gap-4 font-semibold list-disc list-inside text-sky-300'>
+          <ul className='grid grid-cols-2 gap-4 font-semibold list-disc list-inside sm:grid-cols-3 md:grid-cols-4 text-sky-300'>
             {skills.map((skill, key) => (
               <li key={key}>
                 <span className='text-gray-800'>{skill}</span>
