@@ -1,11 +1,8 @@
 import React from 'react';
 import tw from 'twin.macro';
-import { IconType } from 'react-icons/lib';
 import Link from 'next/link';
 
 interface Props {
-  // text: string;
-  // Icon?: IconType | React.ReactElement;
   className?: string;
   color?: string;
   link?: string;
@@ -15,8 +12,6 @@ interface Props {
 }
 
 export default function Button({
-  // text,
-  // Icon,
   className,
   color,
   id,

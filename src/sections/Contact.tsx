@@ -1,24 +1,10 @@
-import React, { ReactElement, useState } from 'react';
-import Container from '~/components/Container';
-import Button from '~/components/Button';
-import socials from '~/lib/data/socials';
 import Link from 'next/link';
+import React, { ReactElement } from 'react';
+import Button from '~/components/Button';
+import Container from '~/components/Container';
+import socials from '~/lib/data/socials';
 
 export default function Contact(): ReactElement {
-  // const [fields, setFields] = useState({ name: '', email: '', message: '' });
-
-  // const submitForm = (e: any) => {
-  //   e.preventDefault();
-  //   console.log(fields);
-  //   fetch('https://formspree.io/f/xjvlkeqg', {
-  //     method: 'POST',
-  //     body: JSON.stringify(fields),
-  //     headers: { 'Content-Type': 'application/json' },
-  //   }).then(() => {
-  //     setFields({ name: '', email: '', message: '' });
-  //   });
-  // };
-
   return (
     <section id='contact'>
       <Container heading='Contact' headingSize='small' className='my-12'>
@@ -36,9 +22,7 @@ export default function Contact(): ReactElement {
             <div className='flex flex-wrap gap-3'>
               {socials.map((social, key) => (
                 <Button
-                  // text={social.text}
                   className='flex flex-row'
-                  // Icon={social.icon}
                   color={social.color}
                   link={social.link}
                   id={social.text === 'Polywork' ? 'polywork' : ''}
@@ -50,61 +34,6 @@ export default function Contact(): ReactElement {
               ))}
             </div>
           </div>
-          {/* <div className='space-y-4'>
-            <p>Alternately you can fill the contact form below:</p>
-            <form onSubmit={submitForm} className='flex flex-col space-y-3'>
-              <div className='flex flex-col flex-1 space-y-3 sm:space-y-0 sm:space-x-3 sm:flex-row'>
-                <div className='flex-1'>
-                  <label className='required' htmlFor='name'>
-                    Name
-                  </label>
-                  <input
-                    type='text'
-                    className='input'
-                    name='name'
-                    value={fields.name}
-                    id='name'
-                    required
-                    onChange={(e: any) => {
-                      setFields({ ...fields, name: e.target.value });
-                    }}
-                  />
-                </div>
-                <div className='flex-1'>
-                  <label className='required' htmlFor='email'>
-                    Email
-                  </label>
-                  <input
-                    type='text'
-                    className='input'
-                    name='email'
-                    value={fields.email}
-                    id='email'
-                    required
-                    onChange={(e: any) => {
-                      setFields({ ...fields, email: e.target.value });
-                    }}
-                  />
-                </div>
-              </div>
-              <div>
-                <label className='required' htmlFor='message'>
-                  Message
-                </label>
-                <textarea
-                  className='h-36 input'
-                  name='message'
-                  value={fields.message}
-                  id='message'
-                  required
-                  onChange={(e: any) => {
-                    setFields({ ...fields, message: e.target.value });
-                  }}
-                />
-              </div>
-              <Button text='Send' type='submit' className='w-min' />
-            </form>
-          </div> */}
         </div>
       </Container>
     </section>
