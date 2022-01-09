@@ -77,6 +77,19 @@ const projects: Project[] = [
     ],
   },
   {
+    title: 'Byld, IIIT Delhi',
+    description:
+      'The official website of Byld, the software development club of IIIT Delhi.',
+    links: [
+      {
+        type: 'website',
+        link: 'https://byld-iiitd.netlify.app',
+      },
+    ],
+    image: '/images/projects/byld-iiitd.png',
+    tags: ['Svelte', 'SvelteKit', 'TypeScript', 'TailwindCSS'],
+  },
+  {
     title: 'Tiiime',
     description:
       'A prototype of a crowdsourced time management app for IIIT Delhi students.',
