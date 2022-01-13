@@ -83,7 +83,7 @@ const projects: Project[] = [
     links: [
       {
         type: 'website',
-        link: 'https://byld-iiitd.netlify.app',
+        link: 'https://byld.iiitd.edu.in',
       },
       {
         type: 'github',
