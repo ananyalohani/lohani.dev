@@ -21,7 +21,7 @@ export default function Footer(): ReactElement {
           Built with <Link href='https://nextjs.org'>Next.js</Link> and{' '}
           <Link href='https://tailwindcss.com'>Tailwind</Link>
         </div>
-        <div>&copy; Ananya Lohani 2021</div>
+        <div>&copy; Ananya Lohani 2021 &ndash; Present</div>
       </Container>
     </footer>
   );
