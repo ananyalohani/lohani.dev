@@ -20,10 +20,14 @@ export default function About(): ReactElement {
             </p>
             <p>
               I'm currently working at{' '}
-              <a href='https://tweek-labs.com' target='_blank' rel='noopener'>
-                Tweek Labs
+              <a href='https://layer0.co' target='_blank' rel='noopener'>
+                Layer0
               </a>{' '}
-              as a Frontend Engineer.
+              by{' '}
+              <a href='https://limelight.com' target='_blank' rel='noopener'>
+                Limelight
+              </a>{' '}
+              as a Solutions Engineer.
             </p>
             <p>
               Welcome to my little space on the internet where I document my
