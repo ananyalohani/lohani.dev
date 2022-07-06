@@ -11,7 +11,7 @@ export default function About(): ReactElement {
               Hello there, I'm Ananya.
             </h1>
             <p>
-              I am a 3rd year undergrad student majoring in Computer Science and
+              I am a final year student majoring in Computer Science and
               Engineering at{' '}
               <a href='https://iiitd.ac.in' target='_blank' rel='noopener'>
                 Indraprastha Institute of Information Technology, Delhi
@@ -20,14 +20,10 @@ export default function About(): ReactElement {
             </p>
             <p>
               I'm currently working at{' '}
-              <a href='https://layer0.co' target='_blank' rel='noopener'>
-                Layer0
+              <a href='https://edg.io' target='_blank' rel='noopener'>
+                Edgio
               </a>{' '}
-              by{' '}
-              <a href='https://limelight.com' target='_blank' rel='noopener'>
-                Limelight
-              </a>{' '}
-              as a Solutions Engineer.
+              as a Software Engineer.
             </p>
             <p>
               Welcome to my little space on the internet where I document my

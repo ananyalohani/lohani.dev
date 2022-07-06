@@ -55,24 +55,24 @@ const socials: Social[] = [
     text: 'LinkedIn',
     link: 'https://linkedin.com/in/ananyalohani',
   },
-  {
-    color: 'blue',
-    icon: FaBehance,
-    text: 'Behance',
-    link: 'https://www.behance.net/ananyalohani',
-  },
+  // {
+  //   color: 'blue',
+  //   icon: FaBehance,
+  //   text: 'Behance',
+  //   link: 'https://www.behance.net/ananyalohani',
+  // },
   {
     color: 'sky',
     icon: FaTelegramPlane,
     text: 'Telegram',
     link: 'https://t.me/ananyalohani',
   },
-  {
-    color: 'teal',
-    icon: FaEnvelope,
-    text: 'Email',
-    link: 'mailto:ananya@lohani.dev',
-  },
+  // {
+  //   color: 'teal',
+  //   icon: FaEnvelope,
+  //   text: 'Email',
+  //   link: 'mailto:ananya@lohani.dev',
+  // },
 ];
 
 export const shareSocials: ShareSocial[] = [
