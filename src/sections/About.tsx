@@ -20,10 +20,10 @@ export default function About(): ReactElement {
             </p>
             <p>
               I'm currently working at{' '}
-              <a href='https://edg.io' target='_blank' rel='noopener'>
-                Edgio
+              <a href='https://pabio.com' target='_blank' rel='noopener'>
+                Pabio
               </a>{' '}
-              as a Software Engineer.
+              as a Full-stack Intern.
             </p>
             <p>
               Welcome to my little space on the internet where I document my
