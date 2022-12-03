@@ -18,6 +18,7 @@
     "mdx-bundler": "^6.0.3",
     "next": "10.2.3",
     "next-seo": "^4.28.1",
+    "next-use-posthog": "^1.16.1",
     "pnpm": "^6.24.4",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^6.7.0",

@@ -18,6 +18,7 @@ specifiers:
   mdx-bundler: ^6.0.3
   next: 10.2.3
   next-seo: ^4.28.1
+  next-use-posthog: ^1.16.1
   pnpm: ^6.24.4
   postcss: ^8.4.5
   postcss-flexbugs-fixes: ^5.0.2
@@ -47,6 +48,7 @@ dependencies:
   mdx-bundler: 6.0.3_esbuild@0.12.29
   next: 10.2.3_c8cdd86752aa86fb2b6e32ae91115ebe
   next-seo: 4.28.1_cdb07c42721266739ffbd3ea8e818efe
+  next-use-posthog: 1.16.1_react@17.0.2
   pnpm: 6.25.0
   postcss-flexbugs-fixes: 5.0.2_postcss@8.4.5
   postcss-preset-env: 6.7.0
@@ -475,6 +477,11 @@ packages:
     dependencies:
       estree-walker: 2.0.2
       picomatch: 2.3.1
+    dev: false
+
+  /@sentry/types/6.19.7:
+    resolution: {integrity: sha512-jH84pDYE+hHIbVnab3Hr+ZXr1v8QABfhx39KknxqKWr2l0oEItzepV0URvbEhB446lk/S/59230dlUUIBGsXbg==}
+    engines: {node: '>=6'}
     dev: false
 
   /@sindresorhus/is/4.2.1:
@@ -1684,6 +1691,10 @@ packages:
     resolution: {integrity: sha512-WtySTkS4OKev5JtpHXnib4Gxiurzh5NCGvWrFaZ34m6JehfTUhKZvn9njTfw48t6JumVQOmrKqpmGcdwxnhqBQ==}
     dependencies:
       format: 0.2.2
+    dev: false
+
+  /fflate/0.4.8:
+    resolution: {integrity: sha512-FJqqoDBR00Mdj9ppamLa/Y7vxm+PRmNWA67N846RvsoYVMKB4q3y/de5PA7gUmRMYK/8CMz2GDZQmCRN1wBcWA==}
     dev: false
 
   /file-uri-to-path/1.0.0:
@@ -2942,6 +2953,15 @@ packages:
       react-dom: 17.0.2_react@17.0.2
     dev: false
 
+  /next-use-posthog/1.16.1_react@17.0.2:
+    resolution: {integrity: sha512-oHdjuaPOcXfnjUdOtirqKCdoZ239smUUGLDrsI/EeWrhpiHSzt8060hDbRdd2erqueX6TM4E7JYUNYuE+J/BoA==}
+    peerDependencies:
+      react: ^16.13.1 || ^17 || ^18
+    dependencies:
+      posthog-js: 1.16.0
+      react: 17.0.2
+    dev: false
+
   /next/10.2.3_c8cdd86752aa86fb2b6e32ae91115ebe:
     resolution: {integrity: sha512-dkM1mIfnORtGyzw/Yme8RdqNxlCMZyi4Lqj56F01/yHbe1ZtOaJ0cyqqRB4RGiPhjGGh0319f8ddjDyO1605Ow==}
     engines: {node: '>=10.13.0'}
@@ -3654,6 +3674,14 @@ packages:
       source-map-js: 1.0.1
     dev: true
 
+  /posthog-js/1.16.0:
+    resolution: {integrity: sha512-7gE4fDSCD7wzdr+Jb/dOIqUubsc4ahnyJYXKudDF+LcuhGX8qP8wRj8WA6JtyQDS1mqSH3Y+AwOWzfC9W8UIMQ==}
+    dependencies:
+      '@sentry/types': 6.19.7
+      fflate: 0.4.8
+      rrweb-snapshot: 1.1.14
+    dev: false
+
   /pretty-hrtime/1.0.3:
     resolution: {integrity: sha1-t+PqQkNaTJsnWdmeDyAesZWALuE=}
     engines: {node: '>= 0.8'}
@@ -3965,6 +3993,10 @@ packages:
     dependencies:
       hash-base: 3.1.0
       inherits: 2.0.4
+    dev: false
+
+  /rrweb-snapshot/1.1.14:
+    resolution: {integrity: sha512-eP5pirNjP5+GewQfcOQY4uBiDnpqxNRc65yKPW0eSoU1XamDfc4M8oqpXGMyUyvLyxFDB0q0+DChuxxiU2FXBQ==}
     dev: false
 
   /run-parallel/1.2.0:

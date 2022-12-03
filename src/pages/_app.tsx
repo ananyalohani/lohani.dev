@@ -2,8 +2,13 @@ import '~/styles/tailwind.css';
 import '~/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
+import { usePostHog } from 'next-use-posthog';
 
 function MyApp({ Component, pageProps }: AppProps) {
+  usePostHog(`${process.env.NEXT_PUBLIC_POSTHOG_TOKEN}`, {
+    api_host: 'https://app.posthog.com',
+  });
+
   const url = process.env.NEXT_PUBLIC_SITE_URL;
   return (
     <>
