@@ -30,6 +30,14 @@ const projects: Project[] = [
     ],
   },
   {
+    title: 'Retcon',
+    description:
+      'The landing page of Retcon, a decentralized ecosystem for creating & trading in-game assets using generative ML.',
+    links: [{ type: 'website', link: 'https://ret-con.tech' }],
+    image: '/images/projects/retcon.png',
+    tags: ['Next.js', 'React', 'TypeScript', 'TailwindCSS'],
+  },
+  {
     title: 'Pixell',
     description:
       'A pixel art NFT marketplace on the Ethereum blockchain. The platform supports creation, minting, selling and buying of pixel art NFTs on the Ropsten Testnet.',
