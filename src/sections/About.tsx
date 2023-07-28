@@ -11,8 +11,7 @@ export default function About(): ReactElement {
               Hello there, I'm Ananya.
             </h1>
             <p>
-              I am a final year student majoring in Computer Science and
-              Engineering at{' '}
+              I am a recent CSE graduate from{' '}
               <a href='https://iiitd.ac.in' target='_blank' rel='noopener'>
                 Indraprastha Institute of Information Technology, Delhi
               </a>
